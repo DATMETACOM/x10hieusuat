@@ -69,7 +69,7 @@
     }
 
     .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
-    .section { padding: 88px 0; position: relative; }
+    .section { padding: 96px 0; position: relative; }
     .panel {
       background: linear-gradient(180deg, var(--glass-strong), var(--glass));
       border: 1px solid var(--line);
@@ -158,6 +158,7 @@
       font-size: .78rem;
     }
     .red-accent { color: #b11f1f; }
+    .ink-accent { color: var(--ink); }
     h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; }
     h1 {
       margin: 18px 0 14px;
@@ -176,7 +177,7 @@
       font-weight: 800;
     }
     .hero-proof {
-      margin-top: 22px;
+      margin-top: 26px;
       display:flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -194,14 +195,14 @@
       display:flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 24px;
+      margin-top: 28px;
     }
     .btn {
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap: 10px;
-      padding: 15px 20px;
+      padding: 16px 22px;
       border-radius: 999px;
       font-weight: 800;
       transition: transform .18s ease, background .18s ease;
@@ -309,40 +310,46 @@
     }
 
     .section-head {
-      max-width: 760px;
-      margin-bottom: 26px;
+      max-width: 840px;
+      margin: 0 auto 36px;
+      text-align: center;
     }
     .kicker {
-      color: #b11f1f;
-      font-size: .84rem;
+      color: var(--ink);
+      font-size: clamp(1.02rem, 1.7vw, 1.32rem);
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: .14em;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
     .section h2 {
-      font-size: clamp(2rem, 4vw, 3.3rem);
+      font-size: clamp(2.35rem, 4.4vw, 4rem);
       letter-spacing: -0.04em;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
     .lead {
       margin: 0;
       color: var(--muted);
       line-height: 1.8;
-      font-size: 1rem;
+      font-size: clamp(1rem, 1.35vw, 1.12rem);
+    }
+    .lead-strong {
+      color: #b11f1f;
+      font-weight: 800;
     }
 
-    .grid-3 { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
-    .grid-2 { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .grid-3 { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+    .grid-2 { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
     .card {
-      padding: 22px;
+      padding: 28px;
       border-radius: var(--radius-lg);
-      background: rgba(255,255,255,0.16);
-      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.24), rgba(255,255,255,0.14));
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      box-shadow: 0 20px 52px rgba(61, 34, 14, 0.14);
     }
     .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
+      font-size: 1.42rem;
+      margin-bottom: 10px;
     }
     .card p {
       margin: 0;
@@ -353,7 +360,7 @@
     .speaker-layout {
       display:grid;
       grid-template-columns: .95fr 1.05fr;
-      gap: 18px;
+      gap: 26px;
       align-items: center;
     }
     .speaker-bio {
@@ -365,10 +372,10 @@
       gap: 12px;
     }
     .bullet {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.13);
-      border: 1px solid var(--line);
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255, 255, 255, 0.32);
     }
     .bullet strong { display:block; margin-bottom: 4px; }
     .bullet span { color: var(--muted); line-height: 1.65; }
@@ -382,10 +389,10 @@
       grid-template-columns: 140px 1fr;
       gap: 16px;
       align-items:start;
-      padding: 18px 20px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.14);
-      border: 1px solid var(--line);
+      padding: 22px 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255, 255, 255, 0.32);
     }
     .agenda-time {
       font-weight: 900;
@@ -399,10 +406,11 @@
     .agenda-item p { margin: 0; color: var(--muted); line-height: 1.7; }
 
     .pricing-card {
-      padding: 24px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.16);
-      border: 1px solid var(--line);
+      padding: 30px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      box-shadow: 0 22px 60px rgba(61, 34, 14, 0.15);
     }
     .pricing-card.featured {
       background: linear-gradient(180deg, rgba(217, 176, 108, 0.18), rgba(255,255,255,0.14));
@@ -647,8 +655,8 @@
             <div class="chip">Giá thành viên: 259K</div>
           </div>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#register">Hãy nghe trực tiếp để cảm nhận sự thật</a>
-            <a class="btn btn-secondary" href="#speaker">Gặp người thật trong câu chuyện của chính bạn</a>
+            <a class="btn btn-primary" href="#register">Giữ ghế tham dự ngay</a>
+            <a class="btn btn-secondary" href="#speaker">Xem câu chuyện phía sau X10</a>
           </div>
         </div>
 
@@ -683,7 +691,7 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="kicker">Vì sao bạn nên đến</div>
-          <h2>Buổi này dành cho những anh chị đã đi rất lâu, đã cố rất nhiều, nhưng vẫn thấy mình chưa chạm đúng nhịp tăng trưởng.</h2>
+          <h2 class="red-accent">Buổi này dành cho những anh chị đã đi rất lâu, đã cố rất nhiều, nhưng vẫn thấy mình chưa chạm đúng nhịp tăng trưởng.</h2>
           <p class="lead">X10 không nói chuyện chung chung. X10 chạm đúng cảm giác rất quen của người làm doanh nghiệp: đội ngũ bận rộn nhưng chưa bứt lên, doanh thu đứng lại dù đã cố thêm, và người đứng đầu thì ngày nào cũng vừa phải nghĩ chiến lược, vừa phải gánh vận hành. Đó là lúc một cách nhìn mới trở nên đáng giá.</p>
         </div>
         <div class="grid-3">
@@ -703,11 +711,35 @@
       </div>
     </section>
 
+    <section class="section" id="outcomes">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="kicker">Sau buổi này, anh chị mang về gì?</div>
+          <h2 class="red-accent">Không chỉ là cảm hứng. Là một cách nhìn mới để biết mình cần đổi từ đâu.</h2>
+          <p class="lead">Một buổi chiều không thể thay anh chị điều hành doanh nghiệp. Nhưng nếu đúng người, đúng câu chuyện và đúng thời điểm, nó có thể mở ra một điểm rẽ: điểm mà người lãnh đạo thôi cố thêm bằng cách cũ và bắt đầu nhìn hệ thống bằng một tầng sâu hơn.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card reveal">
+            <h3>Nhìn ra điểm nghẽn thật</h3>
+            <p>Không phải lúc nào doanh nghiệp chậm lại vì thiếu người, thiếu tiền hay thiếu công cụ. Nhiều khi điểm nghẽn nằm ở cách người lãnh đạo đang nhìn vấn đề.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Hiểu vì sao X10 buộc cách cũ phải dừng lại</h3>
+            <p>Mục tiêu X2, X3 vẫn có thể dùng lối làm cũ. Nhưng X10 đủ lớn để buộc hệ thống phải đặt lại câu hỏi, mở ra cách nghĩ mới và tìm lời giải khác.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Mang về một câu hỏi để hành động</h3>
+            <p>Không đổ lỗi cho thị trường, đội ngũ hay hoàn cảnh. Câu hỏi quan trọng hơn là: tôi cần làm gì để tình hình tốt hơn từ chính vai trò của mình?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="speaker">
       <div class="wrap">
         <div class="section-head reveal">
           <div class="kicker">Diễn giả sự kiện</div>
-          <h2>Anh Phạm Duy Hiếu</h2>
+          <h2 class="red-accent">Anh Phạm Duy Hiếu</h2>
           <p class="lead">Một thuyền trưởng doanh nghiệp đã đi qua những vai trò điều hành thật, va chạm với áp lực thật, và chọn mang “sự thật” đó quay lại thành bài học cho cộng đồng doanh nhân. Đây là chia sẻ đi từ trải nghiệm, không đi từ khẩu hiệu.</p>
         </div>
         <div class="panel card speaker-layout reveal">
@@ -733,6 +765,10 @@
                 <strong class="red-accent">Giọng chia sẻ</strong>
                 <span>Không kể chuyện để tạo cảm hứng suông. Anh chia sẻ từ những lần sai, những lần chỉnh lại cách nghĩ, và những lần đổi nhịp để đổi kết quả.</span>
               </div>
+              <div class="bullet">
+                <strong class="red-accent">Bài học X10 từ thực tế điều hành</strong>
+                <span>Từ giai đoạn quay lại ABBANK trong bối cảnh nhiều áp lực, câu chuyện X10 không còn là khẩu hiệu. Đó là cách đặt mục tiêu đủ lớn để cách làm cũ không còn đủ, buộc tổ chức phải mở ra một tầng tư duy mới.</span>
+              </div>
             </div>
           </div>
         </div>
@@ -743,7 +779,7 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="kicker">Video giới thiệu chương trình</div>
-          <h2>Nghe trước tinh thần X10 trước khi giữ ghế</h2>
+          <h2 class="red-accent">Nghe trước tinh thần X10 trước khi giữ ghế</h2>
           <p class="lead">Một lát cắt ngắn để anh chị cảm nhận giọng chia sẻ, năng lượng của chương trình và lý do buổi gặp này đáng có mặt trực tiếp.</p>
         </div>
         <div class="panel card reveal">
@@ -758,7 +794,7 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="kicker">Người dẫn chương trình</div>
-          <h2>Nguyễn Thị Tuyết</h2>
+          <h2 class="red-accent">Nguyễn Thị Tuyết</h2>
           <p class="lead">Chủ tịch JCI Haiphong 2023, Chủ tịch BNI Chapter Revia 2026. Là người giữ nhịp cho cả chương trình đi đúng mạch, đúng độ và đúng cảm xúc.</p>
         </div>
         <div class="panel card speaker-layout reveal">
@@ -778,7 +814,7 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="kicker">Agenda chương trình</div>
-          <h2>Một buổi chiều đủ sâu để nhìn lại, đủ gọn để hành động.</h2>
+          <h2 class="red-accent">Một buổi chiều đủ sâu để nhìn lại, đủ gọn để hành động.</h2>
         </div>
         <div class="agenda">
           <div class="agenda-item reveal"><div class="agenda-time">13:30 - 14:00</div><div><h3>Đón khách và networking</h3><p>Check-in, ổn định chỗ ngồi, gặp gỡ các doanh nhân cùng hệ giá trị.</p></div></div>
@@ -794,7 +830,7 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="kicker">Lưu ý về phí tham dự</div>
-          <h2>Phí tham dự được thiết kế để ưu tiên anh chị doanh nhân thực sự muốn tham gia và sẵn sàng đầu tư cho trải nghiệm này.</h2>
+          <h2 class="red-accent">Phí tham dự được thiết kế để ưu tiên anh chị doanh nhân thực sự muốn tham gia và sẵn sàng đầu tư cho trải nghiệm này.</h2>
         </div>
         <div class="grid-2">
           <div class="pricing-card featured reveal">
@@ -821,7 +857,7 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="kicker">Đăng ký</div>
-          <h2>Chỉ cần vài bước để giữ chỗ của bạn.</h2>
+          <h2 class="red-accent">Chỉ cần vài bước để giữ chỗ của bạn.</h2>
           <p class="lead">Sau khi chuyển phí, vui lòng hoàn tất đăng ký qua Google Form để ban tổ chức xác nhận vé và giữ chỗ ngồi cho bạn.</p>
         </div>
         <div class="panel form-box center reveal">
@@ -834,7 +870,7 @@
 
     <section class="section" id="payment">
       <div class="wrap">
-        <div class="section-head reveal"><div class="kicker">Chuyển khoản</div><h2>Thanh toán để xác nhận chỗ ngồi</h2><p class="lead">Quét mã QR, chuyển khoản và hoàn thành đăng ký theo cú pháp để hệ thống xác nhận vé nhanh nhất.</p></div>
+        <div class="section-head reveal"><div class="kicker">Chuyển khoản</div><h2 class="red-accent">Thanh toán để xác nhận chỗ ngồi</h2><p class="lead">Quét mã QR, chuyển khoản và hoàn thành đăng ký theo cú pháp để hệ thống xác nhận vé nhanh nhất.</p></div>
         <div class="grid-2">
           <div class="panel payment-box center reveal"><div class="qr"><img src="images/qr.jpg" alt="QR thanh toán"></div><div class="lead">Quét mã để chuyển khoản nhanh và chính xác.</div></div>
           <div class="panel payment-box reveal"><h3 style="font-size: 1.75rem; margin-bottom: 12px;">Thông tin tài khoản</h3><div class="account"><div class="row"><span>Ngân hàng</span><span>Vietcombank</span></div><div class="row"><span>Tên tài khoản</span><span>CLB DOANH NHAN TRE THE GIOI TAI VIET NAM</span></div><div class="row"><span>Số tài khoản</span><span>1050120408</span></div><div class="row"><span>Chi nhánh</span><span>VCB THU DUC - PGD LINH TRUNG</span></div><div class="row"><span>Cú pháp</span><span>Họ tên SĐT - x10jcihp</span></div></div></div>
@@ -843,7 +879,7 @@
     </section>
 
     <section class="section" id="details">
-      <div class="wrap"><div class="section-head reveal"><div class="kicker">Thông tin sự kiện</div><h2>Thông tin tổ chức</h2></div><div class="event-grid"><div class="event reveal"><div class="label">Ngày</div><div class="value">Thứ Hai, 18/05/2026</div></div><div class="event reveal"><div class="label">Thời gian</div><div class="value">13:30 - 17:00</div></div><div class="event reveal"><div class="label">Địa điểm</div><div class="value">LeChan Hall, Mercure Hotel</div></div><div class="event reveal"><div class="label">Quy mô</div><div class="value">110 doanh nhân</div></div></div></div>
+      <div class="wrap"><div class="section-head reveal"><div class="kicker">Thông tin sự kiện</div><h2 class="red-accent">Thông tin tổ chức</h2></div><div class="event-grid"><div class="event reveal"><div class="label">Ngày</div><div class="value">Thứ Hai, 18/05/2026</div></div><div class="event reveal"><div class="label">Thời gian</div><div class="value">13:30 - 17:00</div></div><div class="event reveal"><div class="label">Địa điểm</div><div class="value">LeChan Hall, Mercure Hotel</div></div><div class="event reveal"><div class="label">Quy mô</div><div class="value">110 doanh nhân</div></div></div></div>
     </section>
 
     <section class="section"><div class="wrap"><div class="orgs reveal"><div class="org"><img src="images/jci-logo.png" alt="JCI Haiphong"><span>JCI Haiphong</span></div><div class="org"><img src="images/bni-logo.png" alt="BNI Chapter Revia"><span>BNI Chapter Revia</span></div></div></div></section>
