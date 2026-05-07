@@ -46,7 +46,7 @@
       inset: 0;
       z-index: -3;
       background: url('images/bg-hero.jpg') center/cover no-repeat;
-      filter: saturate(0.9) contrast(0.95) brightness(0.86);
+      filter: saturate(1.02) contrast(1.02) brightness(0.98);
       transform: scale(1.02);
     }
     .bg::before {
@@ -54,8 +54,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(255, 248, 236, 0.78), rgba(239, 224, 196, 0.9)),
-        linear-gradient(90deg, rgba(35, 25, 15, 0.16), transparent 28%, transparent 72%, rgba(35, 25, 15, 0.16));
+        linear-gradient(180deg, rgba(255, 248, 236, 0.28), rgba(239, 224, 196, 0.42)),
+        linear-gradient(90deg, rgba(35, 25, 15, 0.08), transparent 28%, transparent 72%, rgba(35, 25, 15, 0.08));
     }
     .noise {
       position: fixed;
@@ -157,6 +157,7 @@
       text-transform: uppercase;
       font-size: .78rem;
     }
+    .red-accent { color: #b11f1f; }
     h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; }
     h1 {
       margin: 18px 0 14px;
@@ -169,6 +170,10 @@
       color: var(--muted);
       line-height: 1.85;
       font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+    }
+    .story-emphasis {
+      color: #a83b2d;
+      font-weight: 800;
     }
     .hero-proof {
       margin-top: 22px;
@@ -308,7 +313,7 @@
       margin-bottom: 26px;
     }
     .kicker {
-      color: var(--accent-2);
+      color: #b11f1f;
       font-size: .84rem;
       font-weight: 800;
       text-transform: uppercase;
@@ -404,7 +409,7 @@
       transform: translateY(-6px);
     }
     .pricing-tag {
-      color: var(--accent-2);
+      color: #b11f1f;
       font-size: .8rem;
       font-weight: 900;
       text-transform: uppercase;
@@ -471,6 +476,23 @@
       overflow: hidden;
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
+    }
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: rgba(25, 21, 17, 0.12);
+    }
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
     .account {
       display:grid;
@@ -594,10 +616,10 @@
 
   <header class="nav">
     <div class="wrap panel nav-inner">
-      <div class="brand">
+        <div class="brand">
         <img src="images/jci-logo.png" alt="JCI Haiphong">
         <div>
-          <strong>X10 HIỆU SUẤT</strong>
+          <strong class="red-accent">X10 HIỆU SUẤT</strong>
           <span>Dành cho doanh nhân Hải Phòng</span>
         </div>
       </div>
@@ -610,45 +632,47 @@
       <div class="wrap hero-grid">
         <div class="panel hero-copy reveal">
           <div class="eyebrow">110 ghế ngồi - tối đa 03 vé mỗi người</div>
-          <h1>X10 HIỆU SUẤT</h1>
+          <h1 class="red-accent">X10 HIỆU SUẤT</h1>
           <p class="hero-sub">
-            Khi cách cũ không còn tạo ra kết quả mới, điều doanh nghiệp cần không phải thêm áp lực. Điều cần là một hệ điều hành lãnh đạo mới - để nhìn rõ hơn, ra quyết định nhanh hơn và dẫn đội ngũ đi xa hơn.
+            Có những giai đoạn doanh nghiệp không cần cố nhanh hơn. Điều cần hơn là dừng lại đủ lâu để nhìn ra điều gì đang kéo mình xuống, điều gì đang giữ đội ngũ ở vòng lặp cũ, và điều gì phải được đổi ngay từ bên trong.
             <br><br>
-            X10 HIỆU SUẤT 2026 là workshop dành cho chủ doanh nghiệp, CEO, founder và người điều hành đang muốn bước qua giai đoạn tăng trưởng bằng một cách tiếp cận thực chiến, sắc nét và đáng tin.
+            <span class="story-emphasis">X10 HIỆU SUẤT x LỢI NHUẬN | Thịnh vượng bền vững</span> là nơi dành cho những người đang đứng ở điểm giao giữa áp lực và cơ hội: chủ doanh nghiệp, CEO, founder và người điều hành. Những người không muốn tiếp tục chạy bằng quán tính, mà muốn nhìn doanh nghiệp bằng một nhịp tỉnh táo hơn, sáng hơn và thực tế hơn.
+            <br><br>
+            Đây không phải một buổi hội thảo để nghe cho có. Đây là một trải nghiệm thật, nơi cộng đồng doanh nhân cùng ngồi lại, nghe một câu chuyện thật, rồi mang về một cách nghĩ mới đủ mạnh để mở ra tăng trưởng bền vững và kết quả rõ ràng hơn.
           </p>
           <div class="hero-proof">
-            <div class="chip">18/05/2026 - 13:30 đến 17:00</div>
-            <div class="chip">LeChan Hall, Mercure Hotel</div>
-            <div class="chip">Giá niêm yết 559K</div>
-            <div class="chip">Giá thành viên 259K</div>
+            <div class="chip">Thời gian: 18/05/2026 - 13:30 đến 17:00</div>
+            <div class="chip">Địa điểm: LeChan Hall, Mercure Hotel</div>
+            <div class="chip">Giá niêm yết: 559K</div>
+            <div class="chip">Giá thành viên: 259K</div>
           </div>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#register">Đặt vé ngay</a>
-            <a class="btn btn-secondary" href="#speaker">Gặp diễn giả</a>
+            <a class="btn btn-primary" href="#register">Hãy nghe trực tiếp để cảm nhận sự thật</a>
+            <a class="btn btn-secondary" href="#speaker">Gặp người thật trong câu chuyện của chính bạn</a>
           </div>
         </div>
 
         <div class="panel hero-side reveal">
           <div class="panel-bg"></div>
           <div class="speaker-portrait">
-            <img src="images/speaker-hero.png" alt="Phạm Duy Hiếu">
-            <div class="speaker-caption">Phạm Duy Hiếu - người đã đưa tư duy X10 vào thực tiễn điều hành</div>
+            <img src="images/speaker-primary.png" alt="Phạm Duy Hiếu">
+            <div class="speaker-caption">Phạm Duy Hiếu - người đã đi qua áp lực thật và mang lại một góc nhìn đủ khác để doanh nghiệp bước tiếp</div>
           </div>
           <div class="quote">
-            “Doanh nghiệp không thiếu người làm việc chăm chỉ. Doanh nghiệp thường thiếu một cách nghĩ đủ lớn để thoát khỏi vòng lặp cũ. X10 là câu chuyện về việc bước ra khỏi quán tính đó.”
+            “Khi doanh nghiệp rơi vào vòng lặp cũ, thứ cần đổi đầu tiên không phải là tiếng hò thúc thêm. Là một cách nhìn mới, đủ sâu để người lãnh đạo đổi cách nghĩ, đội ngũ đổi nhịp và kết quả đổi theo.”
           </div>
           <div class="stats">
             <div class="stat featured">
-              <div class="label">Diễn giả chính</div>
-              <div class="value">Phạm Duy Hiếu, Chủ tịch SVF, Tổng Giám đốc ABBANK</div>
+              <div class="label">Diễn giả sự kiện</div>
+              <div class="value">Anh Phạm Duy Hiếu, Chủ tịch SVF, Tổng Giám đốc ABBANK</div>
             </div>
             <div class="stat">
               <div class="label">Người dẫn chương trình</div>
               <div class="value">Nguyễn Thị Tuyết</div>
             </div>
             <div class="stat">
-              <div class="label">Chức danh</div>
-              <div class="value">Chủ tịch JCI Haiphong 2023, Chủ tịch BNI Chapter Revia 2026</div>
+              <div class="label">Quy mô</div>
+              <div class="value">110 doanh nhân Hải Phòng</div>
             </div>
           </div>
         </div>
@@ -658,22 +682,22 @@
     <section class="section">
       <div class="wrap">
         <div class="section-head reveal">
-          <div class="kicker">Vì sao nên đến</div>
-          <h2>Nếu bạn đang thấy doanh nghiệp đã cố rất nhiều mà vẫn chưa bật lên, buổi này được viết cho đúng nỗi đó.</h2>
-          <p class="lead">X10 không cố nói lớn hơn sự thật. Nó đi thẳng vào những gì các chủ doanh nghiệp thường gặp: đội ngũ làm nhiều nhưng hiệu suất chưa tăng, doanh thu chững lại, lãnh đạo bị mắc kẹt trong vận hành, và một cảm giác rất quen là “mình đang chạy rất nhanh nhưng chưa đi xa hơn”.</p>
+          <div class="kicker">Vì sao bạn nên đến</div>
+          <h2>Buổi này dành cho những anh chị đã đi rất lâu, đã cố rất nhiều, nhưng vẫn thấy mình chưa chạm đúng nhịp tăng trưởng.</h2>
+          <p class="lead">X10 không nói chuyện chung chung. X10 chạm đúng cảm giác rất quen của người làm doanh nghiệp: đội ngũ bận rộn nhưng chưa bứt lên, doanh thu đứng lại dù đã cố thêm, và người đứng đầu thì ngày nào cũng vừa phải nghĩ chiến lược, vừa phải gánh vận hành. Đó là lúc một cách nhìn mới trở nên đáng giá.</p>
         </div>
         <div class="grid-3">
           <div class="card reveal">
-            <h3>Đội ngũ bận rộn nhưng không bứt lên</h3>
-            <p>Đây là lúc người lãnh đạo cần nhìn lại cách hệ thống đang vận hành, thay vì chỉ yêu cầu mọi người cố thêm.</p>
+            <h3>Đội ngũ chạy nhiều nhưng chưa thành lực</h3>
+            <p>Nỗ lực không phải lúc nào cũng tạo ra đòn bẩy. Buổi này giúp anh chị nhìn ra vì sao sức của đội ngũ chưa hóa thành lực của hệ thống, và đâu là điểm cần chỉnh để cả bộ máy đổi nhịp.</p>
           </div>
           <div class="card reveal">
-            <h3>Sales chững lại dù đã tuyển thêm người</h3>
-            <p>Thêm lực chưa chắc tạo thêm kết quả. Câu hỏi thật là lực đó đang được đặt vào đúng chỗ hay không.</p>
+            <h3>Doanh thu chững lại dù đã thêm lực</h3>
+            <p>Thêm người chưa chắc tạo thêm kết quả. Điều quan trọng hơn là cách nghĩ, cách dẫn dắt và cách đặt lực vào đúng chỗ để kết quả thật sự dịch chuyển.</p>
           </div>
           <div class="card reveal">
-            <h3>Lãnh đạo bị mắc kẹt trong điều hành</h3>
-            <p>Khi chủ doanh nghiệp vẫn phải cầm từng việc nhỏ, tăng trưởng sẽ bị giới hạn bởi chính dung lượng của người đứng đầu.</p>
+            <h3>Người lãnh đạo bị mắc kẹt trong việc nhỏ</h3>
+            <p>Khi người đứng đầu bị kéo xuống bởi quá nhiều việc vụn, doanh nghiệp rất khó đi xa. Buổi này mở ra một cách nhìn khác để thoát khỏi vòng giam rất quen đó.</p>
           </div>
         </div>
       </div>
@@ -681,33 +705,33 @@
 
     <section class="section" id="speaker">
       <div class="wrap">
-          <div class="section-head reveal">
-            <div class="kicker">Diễn giả chính</div>
-            <h2>Phạm Duy Hiếu</h2>
-          <p class="lead">Một người đi qua nhiều vai trò lãnh đạo trong tài chính - ngân hàng, từng đối diện với những giai đoạn áp lực cao và sau đó chuyển chúng thành trải nghiệm thật cho cộng đồng doanh nhân.</p>
-          </div>
+        <div class="section-head reveal">
+          <div class="kicker">Diễn giả sự kiện</div>
+          <h2>Anh Phạm Duy Hiếu</h2>
+          <p class="lead">Một thuyền trưởng doanh nghiệp đã đi qua những vai trò điều hành thật, va chạm với áp lực thật, và chọn mang “sự thật” đó quay lại thành bài học cho cộng đồng doanh nhân. Đây là chia sẻ đi từ trải nghiệm, không đi từ khẩu hiệu.</p>
+        </div>
         <div class="panel card speaker-layout reveal">
           <div class="speaker-portrait" style="min-height: 520px;">
             <img src="images/speaker-secondary.png" alt="Phạm Duy Hiếu">
           </div>
           <div class="speaker-bio">
             <div>
-              <div class="role">Diễn giả chính</div>
-              <div class="name">Phạm Duy Hiếu</div>
-              <div class="title">Chủ tịch SVF, Tổng Giám đốc ABBANK. Hơn 25 năm kinh nghiệm trong tài chính - ngân hàng, từng đảm nhiệm các vị trí lãnh đạo tại Vietcombank Leasing, VietABank, VNDirect, Sabeco Fund Management, IPA Investment và SVF.</div>
+              <div class="role red-accent">Diễn giả sự kiện</div>
+              <div class="name">Anh Phạm Duy Hiếu</div>
+              <div class="title">Anh đã từng đảm nhận vị trí Chủ tịch SVF, Tổng Giám đốc ABBANK. Với hơn 25 năm kinh nghiệm trong tài chính - ngân hàng, anh đi qua nhiều vai trò điều hành nơi mỗi quyết định không chỉ ảnh hưởng con số, mà còn ảnh hưởng nhịp sống của cả một tổ chức.</div>
             </div>
             <div class="bullets">
               <div class="bullet">
-                <strong>Điểm nhấn từ ABBANK</strong>
-                <span>Ông Phạm Duy Hiếu được ABBANK bổ nhiệm chức danh Tổng Giám đốc chính thức từ ngày 01/01/2025, sau giai đoạn đồng hành điều hành từ năm 2023.</span>
+                <strong class="red-accent">Những dấu mốc sự nghiệp</strong>
+                <span>Anh Phạm Duy Hiếu được ABBANK bổ nhiệm chức danh Tổng Giám đốc chính thức từ ngày 01/01/2025, sau giai đoạn đồng hành điều hành từ năm 2023.</span>
               </div>
               <div class="bullet">
-                <strong>Gắn với SVF</strong>
-                <span>Đi cùng hệ sinh thái khởi nghiệp, đổi mới sáng tạo và phát triển con người bền vững - nơi tư duy và thực hành gặp nhau.</span>
+                <strong class="red-accent">Đi cùng SVF</strong>
+                <span>Gắn với hệ sinh thái khởi nghiệp, đổi mới sáng tạo và phát triển con người bền vững - nơi tư duy đi ra hành động, chứ không dừng ở lời hay.</span>
               </div>
               <div class="bullet">
-                <strong>Giọng chia sẻ</strong>
-                <span>Không kể chuyện để tạo cảm hứng suông. Diễn giả nói từ trải nghiệm điều hành, sai số thật và những bài học đổi cách nghĩ để đổi kết quả.</span>
+                <strong class="red-accent">Giọng chia sẻ</strong>
+                <span>Không kể chuyện để tạo cảm hứng suông. Anh chia sẻ từ những lần sai, những lần chỉnh lại cách nghĩ, và những lần đổi nhịp để đổi kết quả.</span>
               </div>
             </div>
           </div>
@@ -715,21 +739,36 @@
       </div>
     </section>
 
+    <section class="section" id="video">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="kicker">Video giới thiệu chương trình</div>
+          <h2>Nghe trước tinh thần X10 trước khi giữ ghế</h2>
+          <p class="lead">Một lát cắt ngắn để anh chị cảm nhận giọng chia sẻ, năng lượng của chương trình và lý do buổi gặp này đáng có mặt trực tiếp.</p>
+        </div>
+        <div class="panel card reveal">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/tQEf4_ak51o" title="X10 Performance Preview Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="moderator">
       <div class="wrap">
-          <div class="section-head reveal">
-            <div class="kicker">Người dẫn chương trình</div>
-            <h2>Nguyễn Thị Tuyết</h2>
-          <p class="lead">Chủ tịch JCI Haiphong 2023, Chủ tịch BNI Chapter Revia 2026. Vai trò là giữ nhịp chương trình, nối mạch nội dung và giúp buổi chia sẻ đi đúng trọng tâm, rõ ràng và giàu năng lượng.</p>
-          </div>
+        <div class="section-head reveal">
+          <div class="kicker">Người dẫn chương trình</div>
+          <h2>Nguyễn Thị Tuyết</h2>
+          <p class="lead">Chủ tịch JCI Haiphong 2023, Chủ tịch BNI Chapter Revia 2026. Là người giữ nhịp cho cả chương trình đi đúng mạch, đúng độ và đúng cảm xúc.</p>
+        </div>
         <div class="panel card speaker-layout reveal">
           <div class="speaker-portrait" style="min-height: 360px;">
             <img src="images/moderator.png" alt="Nguyễn Thị Tuyết">
           </div>
           <div class="speaker-bio">
-              <div class="role">Moderator</div>
-            <div class="name">Giữ nhịp chương trình</div>
-            <div class="title">Thiết kế phần dẫn chương trình gọn, rõ và đúng chất một buổi đào tạo cho doanh nhân: có không gian, có mạch nội dung, có sự kết nối giữa diễn giả và người tham dự.</div>
+            <div class="role red-accent">Moderator</div>
+            <div class="name">Người giữ năng lượng kết nối</div>
+            <div class="title">Với năng lượng kết nối tự nhiên, sự chỉn chu trong điều phối và khả năng làm cho khán phòng luôn giữ được nhịp, chị sẽ giúp buổi chia sẻ trôi gọn, liền ý và giàu năng lượng từ đầu đến cuối.</div>
           </div>
         </div>
       </div>
@@ -738,45 +777,15 @@
     <section class="section" id="agenda">
       <div class="wrap">
         <div class="section-head reveal">
-          <div class="kicker">Chương trình</div>
-          <h2>Lịch trình đủ rõ để người xem hiểu vì sao buổi này đáng đến.</h2>
+          <div class="kicker">Agenda chương trình</div>
+          <h2>Một buổi chiều đủ sâu để nhìn lại, đủ gọn để hành động.</h2>
         </div>
         <div class="agenda">
-          <div class="agenda-item reveal">
-            <div class="agenda-time">13:30 - 14:00</div>
-            <div>
-              <h3>Đón khách và networking</h3>
-              <p>Check-in, ổn định chỗ ngồi, gặp gỡ các doanh nhân cùng hệ giá trị.</p>
-            </div>
-          </div>
-          <div class="agenda-item reveal">
-            <div class="agenda-time">14:00 - 15:20</div>
-            <div>
-              <h3>Phần 1 - Vì sao cách cũ không còn đủ</h3>
-              <p>Diễn giả mở ra câu chuyện về tư duy lãnh đạo, áp lực tăng trưởng và những điểm nghẽn mà doanh nghiệp thường bỏ qua.</p>
-            </div>
-          </div>
-          <div class="agenda-item reveal">
-            <div class="agenda-time">15:20 - 15:40</div>
-            <div>
-              <h3>Tea break</h3>
-              <p>Nghỉ ngắn, kết nối tự nhiên, tiếp tục trao đổi.</p>
-            </div>
-          </div>
-          <div class="agenda-item reveal">
-            <div class="agenda-time">15:40 - 16:50</div>
-            <div>
-              <h3>Phần 2 - Từ tư duy đến hành động</h3>
-              <p>Case thực tế, bài học từ hành trình điều hành và cách biến khủng hoảng thành cơ hội tăng trưởng.</p>
-            </div>
-          </div>
-          <div class="agenda-item reveal">
-            <div class="agenda-time">16:50 - 17:00</div>
-            <div>
-              <h3>Kết thúc và kết nối</h3>
-              <p>Chốt lại thông điệp chính và mở không gian gặp gỡ sau chương trình.</p>
-            </div>
-          </div>
+          <div class="agenda-item reveal"><div class="agenda-time">13:30 - 14:00</div><div><h3>Đón khách và networking</h3><p>Check-in, ổn định chỗ ngồi, gặp gỡ các doanh nhân cùng hệ giá trị.</p></div></div>
+          <div class="agenda-item reveal"><div class="agenda-time">14:00 - 15:20</div><div><h3>Phần 1 - Vì sao cách cũ không còn đủ</h3><p>Diễn giả mở ra câu chuyện về tư duy lãnh đạo, áp lực tăng trưởng và những điểm nghẽn mà doanh nghiệp thường bỏ qua.</p></div></div>
+          <div class="agenda-item reveal"><div class="agenda-time">15:20 - 15:40</div><div><h3>Tea break</h3><p>Nghỉ ngắn, kết nối tự nhiên, tiếp tục trao đổi.</p></div></div>
+          <div class="agenda-item reveal"><div class="agenda-time">15:40 - 16:50</div><div><h3>Phần 2 - Từ tư duy đến hành động</h3><p>Case thực tế, bài học từ hành trình điều hành và cách biến khủng hoảng thành cơ hội tăng trưởng.</p></div></div>
+          <div class="agenda-item reveal"><div class="agenda-time">16:50 - 17:00</div><div><h3>Kết thúc và kết nối</h3><p>Nhìn lại thông điệp chính và mở không gian gặp gỡ sau chương trình.</p></div></div>
         </div>
       </div>
     </section>
@@ -784,39 +793,24 @@
     <section class="section" id="pricing">
       <div class="wrap">
         <div class="section-head reveal">
-          <div class="kicker">Giá vé</div>
-          <h2>Vé được thiết kế để ưu tiên cộng đồng thực sự muốn tham dự.</h2>
+          <div class="kicker">Lưu ý về phí tham dự</div>
+          <h2>Phí tham dự được thiết kế để ưu tiên anh chị doanh nhân thực sự muốn tham gia và sẵn sàng đầu tư cho trải nghiệm này.</h2>
         </div>
         <div class="grid-2">
           <div class="pricing-card featured reveal">
-            <div class="pricing-tag">Thành viên</div>
-            <div class="pricing-name">BNI / JCI / Happy DN</div>
+            <div class="pricing-tag red-accent">Ưu đãi thành viên</div>
+            <div class="pricing-name">JCI Haiphong / BNI / Cộng đồng doanh nghiệp hạnh phúc</div>
             <p class="lead">Mức giá đặc biệt dành cho thành viên của JCI Haiphong, tổ chức kết nối kinh doanh BNI và cộng đồng doanh nghiệp hạnh phúc.</p>
-            <div class="price">
-              <div class="old">559.000 VNĐ</div>
-              <div class="now">259K</div>
-              <div class="currency">VNĐ</div>
-            </div>
-            <div class="features">
-              <div>1 vé tham dự buổi đào tạo</div>
-              <div>Tea break và networking</div>
-              <div>Thông tin chương trình và chỗ ngồi ưu tiên</div>
-            </div>
+            <div class="price"><div class="old">559.000 VNĐ</div><div class="now">259K</div><div class="currency">VNĐ</div></div>
+            <div class="features"><div>1 vé tham dự buổi đào tạo</div><div>Tea break và networking</div><div>Thông tin chương trình và chỗ ngồi ưu tiên</div></div>
             <a class="pricing-cta" href="#register">Đăng ký ngay</a>
           </div>
           <div class="pricing-card reveal">
-            <div class="pricing-tag">Regular</div>
+            <div class="pricing-tag red-accent">Regular</div>
             <div class="pricing-name">Vé tiêu chuẩn</div>
             <p class="lead">Giá niêm yết dành cho doanh nhân và khách tham dự bên ngoài cộng đồng ưu đãi.</p>
-            <div class="price">
-              <div class="now">559K</div>
-              <div class="currency">VNĐ</div>
-            </div>
-            <div class="features">
-              <div>1 vé tham dự buổi đào tạo</div>
-              <div>Tea break và networking</div>
-              <div>Cơ hội tiếp cận trực tiếp diễn giả</div>
-            </div>
+            <div class="price"><div class="now">559K</div><div class="currency">VNĐ</div></div>
+            <div class="features"><div>1 vé tham dự buổi đào tạo</div><div>Tea break và networking</div><div>Cơ hội tiếp cận trực tiếp diễn giả</div></div>
             <a class="pricing-cta" href="#register">Đăng ký ngay</a>
           </div>
         </div>
@@ -840,55 +834,19 @@
 
     <section class="section" id="payment">
       <div class="wrap">
-        <div class="section-head reveal">
-          <div class="kicker">Chuyển khoản</div>
-          <h2>Thanh toán để xác nhận chỗ ngồi</h2>
-          <p class="lead">Quét mã QR, chuyển khoản và hoàn thành đăng ký theo cú pháp để hệ thống xác nhận vé nhanh nhất.</p>
-        </div>
+        <div class="section-head reveal"><div class="kicker">Chuyển khoản</div><h2>Thanh toán để xác nhận chỗ ngồi</h2><p class="lead">Quét mã QR, chuyển khoản và hoàn thành đăng ký theo cú pháp để hệ thống xác nhận vé nhanh nhất.</p></div>
         <div class="grid-2">
-          <div class="panel payment-box center reveal">
-            <div class="qr">
-              <img src="images/qr.jpg" alt="QR thanh toán">
-            </div>
-            <div class="lead">Quét mã để chuyển khoản nhanh và chính xác.</div>
-          </div>
-          <div class="panel payment-box reveal">
-            <h3 style="font-size: 1.75rem; margin-bottom: 12px;">Thông tin tài khoản</h3>
-            <div class="account">
-              <div class="row"><span>Ngân hàng</span><span>Vietcombank</span></div>
-              <div class="row"><span>Tên tài khoản</span><span>CLB DOANH NHAN TRE THE GIOI TAI VIET NAM</span></div>
-              <div class="row"><span>Số tài khoản</span><span>1050120408</span></div>
-              <div class="row"><span>Chi nhánh</span><span>VCB THU DUC - PGD LINH TRUNG</span></div>
-              <div class="row"><span>Cú pháp</span><span>Họ tên SĐT - x10jcihp</span></div>
-            </div>
-          </div>
+          <div class="panel payment-box center reveal"><div class="qr"><img src="images/qr.jpg" alt="QR thanh toán"></div><div class="lead">Quét mã để chuyển khoản nhanh và chính xác.</div></div>
+          <div class="panel payment-box reveal"><h3 style="font-size: 1.75rem; margin-bottom: 12px;">Thông tin tài khoản</h3><div class="account"><div class="row"><span>Ngân hàng</span><span>Vietcombank</span></div><div class="row"><span>Tên tài khoản</span><span>CLB DOANH NHAN TRE THE GIOI TAI VIET NAM</span></div><div class="row"><span>Số tài khoản</span><span>1050120408</span></div><div class="row"><span>Chi nhánh</span><span>VCB THU DUC - PGD LINH TRUNG</span></div><div class="row"><span>Cú pháp</span><span>Họ tên SĐT - x10jcihp</span></div></div></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="details">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="kicker">Thông tin sự kiện</div>
-          <h2>Thông tin tổ chức</h2>
-        </div>
-        <div class="event-grid">
-          <div class="event reveal"><div class="label">Ngày</div><div class="value">Thứ Hai, 18/05/2026</div></div>
-          <div class="event reveal"><div class="label">Thời gian</div><div class="value">13:30 - 17:00</div></div>
-          <div class="event reveal"><div class="label">Địa điểm</div><div class="value">LeChan Hall, Mercure Hotel</div></div>
-          <div class="event reveal"><div class="label">Quy mô</div><div class="value">110 doanh nhân</div></div>
-        </div>
-      </div>
+      <div class="wrap"><div class="section-head reveal"><div class="kicker">Thông tin sự kiện</div><h2>Thông tin tổ chức</h2></div><div class="event-grid"><div class="event reveal"><div class="label">Ngày</div><div class="value">Thứ Hai, 18/05/2026</div></div><div class="event reveal"><div class="label">Thời gian</div><div class="value">13:30 - 17:00</div></div><div class="event reveal"><div class="label">Địa điểm</div><div class="value">LeChan Hall, Mercure Hotel</div></div><div class="event reveal"><div class="label">Quy mô</div><div class="value">110 doanh nhân</div></div></div></div>
     </section>
 
-    <section class="section">
-      <div class="wrap">
-        <div class="orgs reveal">
-          <div class="org"><img src="images/jci-logo.png" alt="JCI Haiphong"><span>JCI Haiphong</span></div>
-          <div class="org"><img src="images/bni-logo.png" alt="BNI Chapter Revia"><span>BNI Chapter Revia</span></div>
-        </div>
-      </div>
-    </section>
+    <section class="section"><div class="wrap"><div class="orgs reveal"><div class="org"><img src="images/jci-logo.png" alt="JCI Haiphong"><span>JCI Haiphong</span></div><div class="org"><img src="images/bni-logo.png" alt="BNI Chapter Revia"><span>BNI Chapter Revia</span></div></div></div></section>
   </main>
 
   <footer class="footer">
