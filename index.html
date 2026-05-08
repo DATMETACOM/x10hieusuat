@@ -634,7 +634,10 @@
       .hero-grid, .speaker-layout, .grid-2, .grid-3, .event-grid { grid-template-columns: 1fr; }
       .hero-side { display: none; }
       .hero-mobile-visual { display: block; }
-      .hero-mobile-visual .speaker-portrait { min-height: 320px; }
+      .hero-mobile-visual .speaker-portrait {
+        min-height: 0;
+        height: clamp(190px, 34vw, 240px);
+      }
       .agenda-item { grid-template-columns: 1fr; }
       .speaker-portrait { min-height: 360px; }
       .nav-inner { border-radius: 26px; }
@@ -648,7 +651,8 @@
       .hero-copy { padding-top: 20px; }
       .hero-mobile-visual { margin: 16px 0 18px; }
       .hero-mobile-visual .speaker-portrait {
-        min-height: 250px;
+        min-height: 0;
+        height: 180px;
         border-radius: 24px;
       }
       .hero-proof { margin-top: 20px; }
