@@ -193,10 +193,14 @@
     .hero-mobile-visual {
       display: none;
       margin: 18px 0 20px;
+      position: relative;
+      z-index: 1;
     }
     .hero-mobile-visual .speaker-portrait img {
       object-fit: contain;
       object-position: center bottom;
+      transform: scale(1.18);
+      transform-origin: center bottom;
     }
     .hero-proof {
       margin-top: 26px;
@@ -640,7 +644,23 @@
       .hero-mobile-visual { display: block; }
       .hero-mobile-visual .speaker-portrait {
         min-height: 0;
-        height: clamp(190px, 34vw, 240px);
+        height: clamp(320px, 54vh, 520px);
+        border-radius: 32px;
+      }
+      .hero-copy h1 {
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        width: min-content;
+        max-width: 100%;
+        margin: -84px 0 18px 18px;
+        padding: 14px 18px 10px;
+        border-radius: 28px;
+        background: rgba(255, 248, 236, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.26);
+        box-shadow: 0 20px 46px rgba(61, 34, 14, 0.12);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
       }
       .agenda-item { grid-template-columns: 1fr; }
       .speaker-portrait { min-height: 360px; }
@@ -653,12 +673,21 @@
       .hero { min-height: auto; padding-top: 20px; }
       .hero-grid { gap: 14px; }
       .hero-copy { padding-top: 20px; }
-      .hero-mobile-visual { margin: 16px 0 18px; }
+      .hero-mobile-visual { margin: 12px 0 10px; }
       .hero-mobile-visual .speaker-portrait {
         min-height: 0;
-        height: 180px;
+        height: min(52vh, 430px);
         border-radius: 24px;
       }
+      .hero-mobile-visual .speaker-portrait img { transform: scale(1.26); }
+      .hero-copy h1 {
+        margin: -66px 0 14px 12px;
+        padding: 12px 14px 8px;
+        border-radius: 24px;
+        font-size: clamp(2.8rem, 14vw, 4rem);
+        line-height: 0.94;
+      }
+      .hero-sub { line-height: 1.74; }
       .hero-proof { margin-top: 20px; }
       .chip { width: 100%; }
       .btn { width: 100%; }
