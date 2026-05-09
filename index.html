@@ -83,7 +83,6 @@
     }
 
     .wrap { width: min(1440px, calc(100% - 32px)); margin: 0 auto; }
-    .hero .wrap { width: min(960px, calc(100% - 32px)); }
     .section { padding: 96px 0; position: relative; }
     .panel {
       background: linear-gradient(180deg, var(--glass-strong), var(--glass));
@@ -147,18 +146,19 @@
     }
 
     .hero {
-      padding-top: 34px;
-      min-height: calc(100vh - 20px);
+      padding-top: 54px;
+      min-height: auto;
       display: grid;
       align-items: center;
     }
     .hero-grid {
       display:grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap: 22px;
-      align-items: stretch;
+      grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
+      gap: 28px;
+      align-items: center;
     }
-    .hero-copy, .hero-side { padding: 30px; }
+    .hero-copy { padding: 36px 40px; }
+    .hero-side { padding: 18px; }
     .eyebrow {
       display:inline-flex;
       align-items:center;
@@ -177,9 +177,9 @@
     .ink-accent { color: var(--ink); }
     h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; }
     h1 {
-      margin: 18px 0 14px;
-      font-size: clamp(1.72rem, 3.35vw, 3.3rem);
-      letter-spacing: -0.045em;
+      margin: 18px 0 16px;
+      font-size: clamp(2.25rem, 4.4vw, 4.8rem);
+      letter-spacing: -0.05em;
     }
     .hero-program-title {
       display:block;
@@ -189,7 +189,7 @@
       display:block;
       margin-top: 10px;
       font-family: var(--body);
-      font-size: clamp(1.22rem, 2vw, 1.7rem);
+      font-size: clamp(1.18rem, 1.75vw, 1.45rem);
       font-weight: 900;
       letter-spacing: 0;
       color: var(--ink);
@@ -211,6 +211,26 @@
       font-weight: 900;
       line-height: 1.55;
       font-size: clamp(1.05rem, 1.55vw, 1.28rem);
+    }
+    .proof-copy {
+      margin-top: 16px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid var(--line);
+      color: rgba(25,21,17,0.82);
+      line-height: 1.72;
+    }
+    .challenge-strip {
+      margin-top: 16px;
+      padding: 20px 22px;
+      border-radius: 24px;
+      background: rgba(177, 31, 31, 0.1);
+      border: 1px solid rgba(177, 31, 31, 0.22);
+      color: #b11f1f;
+      font-weight: 900;
+      line-height: 1.52;
+      font-size: clamp(1.04rem, 1.45vw, 1.22rem);
     }
     .hero-title-line { display: inline; }
     .hero-mobile-visual {
@@ -253,6 +273,32 @@
       min-height: 68px;
       border-radius: 20px;
       line-height: 1.35;
+    }
+    .event-summary {
+      margin-top: 16px;
+      display:grid;
+      gap: 10px;
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid var(--line);
+    }
+    .event-summary div {
+      display:flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.1);
+      line-height: 1.45;
+    }
+    .event-summary span:first-child {
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .event-summary span:last-child {
+      font-weight: 900;
+      text-align: right;
     }
     .metric-chip .metric-value {
       display:block;
@@ -804,22 +850,7 @@
         border-radius: 32px;
       }
       .hero-copy h1 {
-        position: relative;
-        z-index: 2;
-        display: inline-block;
-        width: max-content;
-        max-width: min(68vw, 620px);
-        min-width: 0;
-        margin: -132px 0 20px 18px;
-        padding: 14px 28px 10px;
-        border-radius: 28px;
-        background: linear-gradient(180deg, rgba(255, 248, 236, 0.68), rgba(255, 238, 215, 0.5));
-        border: 1px solid rgba(255, 255, 255, 0.48);
-        box-shadow: 0 24px 52px rgba(61, 34, 14, 0.18);
-        backdrop-filter: blur(24px) saturate(1.12);
-        -webkit-backdrop-filter: blur(24px) saturate(1.12);
-        text-align: center;
-        white-space: normal;
+        text-align: left;
       }
       .agenda-item { grid-template-columns: 1fr; }
       .speaker-portrait { min-height: 360px; }
@@ -827,7 +858,7 @@
       .nav-inner { border-radius: 26px; }
     }
     @media (max-width: 640px) {
-      .wrap, .hero .wrap { width: min(100% - 20px, 1440px); }
+      .wrap { width: min(100% - 20px, 1440px); }
       .section { padding: 68px 0; }
       .hero-copy, .hero-side { padding: 20px; }
       .hero { min-height: auto; padding-top: 20px; }
@@ -841,21 +872,19 @@
       }
       .hero-mobile-visual .speaker-portrait img { transform: scale(1.42); }
       .hero-copy h1 {
-        margin: -120px 0 18px 12px;
-        width: max-content;
-        max-width: min(68vw, calc(100% - 24px));
-        padding: 10px 10px 9px;
-        border-radius: 24px;
-        font-size: clamp(1.04rem, 4.5vw, 1.42rem);
-        line-height: 1.02;
+        margin: 16px 0 0;
+        font-size: clamp(2rem, 10.2vw, 3.1rem);
+        line-height: 1;
       }
-      .hero-program-title { font-size: clamp(.68rem, 2.9vw, .96rem); letter-spacing: -0.035em; }
-      .hero-kicker { font-size: clamp(.72rem, 3vw, .94rem); margin-top: 8px; }
+      .hero-program-title { white-space: normal; }
+      .hero-kicker { font-size: clamp(1.02rem, 5vw, 1.24rem); margin-top: 10px; }
       .hero-title-line { display: inline; }
       .hero-sub { line-height: 1.74; }
       .hero-proof { margin-top: 20px; }
       .hero-proof { grid-template-columns: 1fr; }
       .chip { width: 100%; }
+      .event-summary div { display:grid; gap: 4px; }
+      .event-summary span:last-child { text-align: left; }
       .btn { width: 100%; }
       .cta-row { flex-direction: column; }
       .speaker-portrait { min-height: 320px; }
@@ -889,54 +918,41 @@
       <div class="wrap hero-grid">
         <div class="panel hero-copy reveal">
           <div class="eyebrow">18.05.2026 - Mercure Hải Phòng - Hơn 100 ghế</div>
+          <h1 class="red-accent"><span class="hero-program-title">X10 HIỆU SUẤT - LỢI NHUẬN</span><span class="hero-kicker">Lợi nhuận thịnh vượng bền vững.</span></h1>
           <div class="hero-mobile-visual">
-            <div class="speaker-portrait">
+            <div class="speaker-portrait video-cover" data-video-trigger role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
               <img src="images/speaker-primary.png" alt="Phạm Duy Hiếu">
+              <div class="speaker-caption">Xem video short</div>
             </div>
           </div>
-          <h1 class="red-accent"><span class="hero-program-title">X10 HIỆU SUẤT - LỢI NHUẬN</span><span class="hero-kicker">Lợi nhuận thịnh vượng bền vững.</span></h1>
           <p class="hero-sub">
             Dành cho anh chị doanh nhân <strong>Hải Phòng</strong> đang bước qua một giai đoạn mà cách làm cũ có thể không còn đủ để doanh nghiệp đi tiếp.
-            <br><br>
-            <span class="story-emphasis">6.000+ KẾT QUẢ X10</span> và <span class="story-emphasis">~330 TỶ ĐỒNG LỢI NHUẬN</span> chỉ sau 3 tháng, ngay giữa giai đoạn thị trường 2023 mà rất nhiều doanh nghiệp chọn co cụm, cắt giảm và phòng thủ.
-            <br><br>
-            Đó không phải một câu chuyện lý thuyết. Đó là câu chuyện “vượt bão” của <strong>ABBANK</strong>, dưới sự dẫn dắt của <strong>anh Phạm Duy Hiếu</strong> - người đã không chọn X2, không chọn X3, mà chọn <strong>X10</strong> để buộc cả hệ thống bước ra khỏi cách nghĩ cũ.
           </p>
-          <p class="story-question">Cách cũ đủ ỔN để anh chị đi tới thành công hiện tại, nhưng có còn HIỆU QUẢ để BƯỚC TIẾP?</p>
           <div class="hero-proof">
             <div class="chip metric-chip"><span class="metric-value">6.000+</span><span class="metric-label">Kết quả X10</span></div>
             <div class="chip metric-chip"><span class="metric-value">~330 tỷ</span><span class="metric-label">Đồng lợi nhuận</span></div>
-            <div class="chip info-chip"><strong>13:30 - 17:00</strong><span>Tầng 5, Phòng Lê Chân<br>Mercure Hải Phòng</span></div>
-            <div class="chip info-chip"><strong>Chỉ hơn 100 ghế</strong><span>Không livestream - Không replay</span></div>
+          </div>
+          <div class="proof-copy">
+            <span class="story-emphasis">Chỉ sau 3 tháng</span>, ngay giữa giai đoạn thị trường 2023 mà rất nhiều doanh nghiệp chọn co cụm, cắt giảm và phòng thủ. Đó là câu chuyện “vượt bão” của <strong>ABBANK</strong>, dưới sự dẫn dắt của <strong>anh Phạm Duy Hiếu</strong> - người đã không chọn X2, không chọn X3, mà chọn <strong>X10</strong> để buộc cả hệ thống bước ra khỏi cách nghĩ cũ.
+          </div>
+          <div class="challenge-strip">
+            Cách cũ đủ ỔN để anh chị đi tới thành công hiện tại, nhưng có còn HIỆU QUẢ để BƯỚC TIẾP?
+          </div>
+          <div class="event-summary">
+            <div><span>Thời gian</span><span>13:30 - 17:00</span></div>
+            <div><span>Địa điểm</span><span>Tầng 5, Phòng Lê Chân, Mercure Hải Phòng</span></div>
+            <div><span>Giới hạn</span><span>Chỉ hơn 100 ghế - Không livestream - Không replay</span></div>
           </div>
           <div class="cta-row">
             <a class="btn btn-primary" href="#register">GIỮ GHẾ NGAY</a>
-            <a class="btn btn-secondary" href="#x10-story">Xem câu chuyện X10</a>
+            <a class="btn btn-secondary" href="#speaker" data-video-trigger>Xem video diễn giả</a>
           </div>
         </div>
 
         <div class="panel hero-side reveal">
-          <div class="panel-bg"></div>
-          <div class="speaker-portrait">
+          <div class="speaker-portrait video-cover" data-video-trigger role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
             <img src="images/speaker-primary.png" alt="Phạm Duy Hiếu">
-            <div class="speaker-caption">Phạm Duy Hiếu - Tổng Giám đốc ABBANK, người dẫn dắt câu chuyện X10 từ áp lực thật tới kết quả thật</div>
-          </div>
-          <div class="quote">
-            Ngày <strong>18/05/2026</strong>, lần đầu tiên tại <strong>Hải Phòng</strong>, hơn <strong>100 anh chị doanh nghiệp</strong> sẽ cùng ngồi lại để nghe toàn bộ độc quyền câu chuyện này - không phải để nghe truyền cảm hứng, mà để trả lời câu hỏi doanh nghiệp cần bước tiếp như thế nào.
-          </div>
-          <div class="stats">
-            <div class="stat featured">
-              <div class="label">Diễn giả sự kiện</div>
-              <div class="value">Anh Phạm Duy Hiếu, Tổng Giám đốc ABBANK</div>
-            </div>
-            <div class="stat">
-              <div class="label">MODERATOR</div>
-              <div class="value">Nguyễn Thị Tuyết</div>
-            </div>
-            <div class="stat">
-              <div class="label">Quy mô</div>
-              <div class="value">Hơn 100 doanh nhân Hải Phòng</div>
-            </div>
+            <div class="speaker-caption">Phạm Duy Hiếu - Tổng Giám đốc ABBANK<br>Xem video short</div>
           </div>
         </div>
       </div>
@@ -1235,11 +1251,12 @@
 
     const videoModal = document.getElementById('speakerVideoModal');
     const videoFrame = document.getElementById('speakerVideoFrame');
-    const videoCover = document.querySelector('.video-cover');
+    const videoTriggers = document.querySelectorAll('[data-video-trigger], .video-cover');
     const closeVideo = document.querySelector('.modal-close');
     const speakerVideoUrl = 'https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0';
 
-    function openVideoModal() {
+    function openVideoModal(event) {
+      event?.preventDefault();
       videoFrame.src = speakerVideoUrl;
       videoModal.classList.add('open');
       videoModal.setAttribute('aria-hidden', 'false');
@@ -1253,12 +1270,14 @@
       document.body.style.overflow = '';
     }
 
-    videoCover?.addEventListener('click', openVideoModal);
-    videoCover?.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        openVideoModal();
-      }
+    videoTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', openVideoModal);
+      trigger.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openVideoModal();
+        }
+      });
     });
     closeVideo?.addEventListener('click', closeVideoModal);
     videoModal?.addEventListener('click', (event) => {
