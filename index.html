@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>X10 HIỆU SUẤT - LỢI NHUẬN | Thịnh vượng bền vững</title>
-  <meta name="description" content="X10 HIỆU SUẤT - LỢI NHUẬN | Thịnh vượng bền vững dành cho doanh nhân Hải Phòng đang cần nâng cấp hệ điều hành lãnh đạo để bước tiếp trong giai đoạn mới.">
+  <title>X10 HIỆU SUẤT - LỢI NHUẬN - Lợi nhuận thịnh vượng bền vững</title>
+  <meta name="description" content="X10 HIỆU SUẤT - LỢI NHUẬN - Lợi nhuận thịnh vượng bền vững dành cho doanh nhân Hải Phòng đang cần nâng cấp hệ điều hành lãnh đạo để bước tiếp trong giai đoạn mới.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="X10 HIỆU SUẤT - LỢI NHUẬN">
   <meta property="og:url" content="https://x10hieusuat.vercel.app/">
-  <meta property="og:title" content="X10 HIỆU SUẤT - LỢI NHUẬN | Thịnh vượng bền vững">
+  <meta property="og:title" content="X10 HIỆU SUẤT - LỢI NHUẬN - Lợi nhuận thịnh vượng bền vững">
   <meta property="og:description" content="Ngày 18/05/2026 tại Mercure Hải Phòng, hơn 100 doanh nhân cùng nghe câu chuyện X10 từ ABBANK và anh Phạm Duy Hiếu.">
   <meta property="og:image" content="https://x10hieusuat.vercel.app/images/bg-hero.jpg">
   <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:alt" content="X10 HIỆU SUẤT - LỢI NHUẬN | Thịnh vượng bền vững">
+  <meta property="og:image:alt" content="X10 HIỆU SUẤT - LỢI NHUẬN - Lợi nhuận thịnh vượng bền vững">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="X10 HIỆU SUẤT - LỢI NHUẬN | Thịnh vượng bền vững">
+  <meta name="twitter:title" content="X10 HIỆU SUẤT - LỢI NHUẬN - Lợi nhuận thịnh vượng bền vững">
   <meta name="twitter:description" content="Dành cho doanh nhân Hải Phòng đang cần nâng cấp hệ điều hành lãnh đạo để bước tiếp.">
   <meta name="twitter:image" content="https://x10hieusuat.vercel.app/images/bg-hero.jpg">
   <link rel="image_src" href="https://x10hieusuat.vercel.app/images/bg-hero.jpg">
@@ -129,7 +129,8 @@
     .brand span {
       display:block;
       color: var(--muted);
-      font-size: .82rem;
+      font-size: .9rem;
+      font-weight: 700;
       margin-top: 2px;
     }
     .nav-cta {
@@ -176,14 +177,19 @@
     h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; }
     h1 {
       margin: 18px 0 14px;
-      font-size: clamp(2.65rem, 5.8vw, 5.45rem);
+      font-size: clamp(2rem, 4.2vw, 4.65rem);
       letter-spacing: -0.045em;
+    }
+    .hero-program-title {
+      display:block;
+      white-space: nowrap;
     }
     .hero-kicker {
       display:block;
       margin-top: 10px;
       font-family: var(--body);
-      font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+      font-size: clamp(1.22rem, 2vw, 1.7rem);
+      font-weight: 900;
       letter-spacing: 0;
       color: var(--ink);
     }
@@ -232,6 +238,32 @@
       color: rgba(25, 21, 17, 0.82);
       font-weight: 700;
       font-size: .9rem;
+    }
+    .metric-chip {
+      min-width: min(100%, 260px);
+      padding: 18px 20px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(177,31,31,0.15), rgba(255,255,255,0.2));
+      border-color: rgba(177,31,31,0.28);
+      box-shadow: 0 18px 46px rgba(61, 34, 14, 0.12);
+    }
+    .metric-chip .metric-value {
+      display:block;
+      color: #b11f1f;
+      font-family: var(--display);
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      line-height: .95;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+    .metric-chip .metric-label {
+      display:block;
+      margin-top: 7px;
+      color: var(--ink);
+      font-size: .88rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 900;
     }
     .cta-row {
       display:flex;
@@ -801,7 +833,8 @@
         font-size: clamp(1.62rem, 7vw, 2.12rem);
         line-height: 1.02;
       }
-      .hero-kicker { font-size: 1rem; }
+      .hero-program-title { font-size: clamp(1.06rem, 4.8vw, 1.72rem); letter-spacing: -0.04em; }
+      .hero-kicker { font-size: 1.08rem; margin-top: 8px; }
       .hero-title-line { display: inline; }
       .hero-sub { line-height: 1.74; }
       .hero-proof { margin-top: 20px; }
@@ -812,8 +845,8 @@
       .video-cover { min-height: 360px; }
       .price .now { font-size: 2.6rem; }
       .nav-cta { padding: 10px 14px; font-size: .9rem; }
-      .brand strong { font-size: .78rem; letter-spacing: .06em; line-height: 1.15; white-space: normal; }
-      .brand span { display:none; }
+      .brand strong { font-size: clamp(.58rem, 2.45vw, .76rem); letter-spacing: .035em; line-height: 1.15; white-space: nowrap; }
+      .brand span { display:block; font-size: .72rem; line-height: 1.2; }
     }
   </style>
 </head>
@@ -826,8 +859,8 @@
       <div class="brand">
         <img src="images/jci-logo.png" alt="JCI Haiphong">
         <div>
-          <strong class="red-accent">X10 HIỆU SUẤT - LỢI NHUẬN |</strong>
-          <span>Thịnh vượng bền vững</span>
+          <strong class="red-accent">X10 HIỆU SUẤT - LỢI NHUẬN</strong>
+          <span>Lợi nhuận thịnh vượng bền vững.</span>
         </div>
       </div>
       <a class="nav-cta" href="#register">GIỮ GHẾ</a>
@@ -838,13 +871,13 @@
     <section class="hero section">
       <div class="wrap hero-grid">
         <div class="panel hero-copy reveal">
-          <div class="eyebrow">18.05.2026 | Mercure Hải Phòng | Hơn 100 ghế</div>
+          <div class="eyebrow">18.05.2026 - Mercure Hải Phòng - Hơn 100 ghế</div>
           <div class="hero-mobile-visual">
             <div class="speaker-portrait">
               <img src="images/speaker-primary.png" alt="Phạm Duy Hiếu">
             </div>
           </div>
-          <h1 class="red-accent">X10 HIỆU SUẤT - LỢI NHUẬN | <span class="hero-kicker">Thịnh vượng bền vững</span></h1>
+          <h1 class="red-accent"><span class="hero-program-title">X10 HIỆU SUẤT - LỢI NHUẬN</span><span class="hero-kicker">Lợi nhuận thịnh vượng bền vững.</span></h1>
           <p class="hero-sub">
             Dành cho anh chị doanh nhân <strong>Hải Phòng</strong> đang bước qua một giai đoạn mà cách làm cũ có thể không còn đủ để doanh nghiệp đi tiếp.
             <br><br>
@@ -854,10 +887,10 @@
           </p>
           <p class="story-question">Cách cũ đủ ỔN để anh chị đi tới thành công hiện tại, nhưng có còn HIỆU QUẢ để BƯỚC TIẾP?</p>
           <div class="hero-proof">
-            <div class="chip"><strong>6.000+ KẾT QUẢ X10</strong></div>
-            <div class="chip"><strong>~330 TỶ ĐỒNG LỢI NHUẬN</strong></div>
-            <div class="chip">13:30 - 17:00 | Tầng 5, Phòng Lê Chân</div>
-            <div class="chip"><strong>Chỉ hơn 100 ghế | Không livestream | Không replay</strong></div>
+            <div class="chip metric-chip"><span class="metric-value">6.000+</span><span class="metric-label">Kết quả X10</span></div>
+            <div class="chip metric-chip"><span class="metric-value">~330 tỷ</span><span class="metric-label">Đồng lợi nhuận</span></div>
+            <div class="chip">13:30 - 17:00 - Tầng 5, Phòng Lê Chân</div>
+            <div class="chip"><strong>Chỉ hơn 100 ghế - Không livestream - Không replay</strong></div>
           </div>
           <div class="cta-row">
             <a class="btn btn-primary" href="#register">GIỮ GHẾ NGAY</a>
@@ -1127,7 +1160,7 @@
     </section>
 
     <section class="section" id="details">
-      <div class="wrap"><div class="section-head reveal"><div class="kicker">Thông tin sự kiện</div><h2 class="red-accent">Thông tin tổ chức</h2></div><div class="event-grid"><div class="event reveal"><div class="label">Ngày</div><div class="value">18/05/2026</div></div><div class="event reveal"><div class="label">Thời gian</div><div class="value">13:30 - 17:00</div></div><div class="event reveal"><div class="label">Địa điểm</div><div class="value">Tầng 5, Phòng Lê Chân, Mercure Hải Phòng</div></div><div class="event reveal"><div class="label">Quy mô</div><div class="value">Chỉ hơn 100 ghế</div></div><div class="event reveal"><div class="label">Hình thức</div><div class="value">Không livestream | Không replay</div></div></div></div>
+      <div class="wrap"><div class="section-head reveal"><div class="kicker">Thông tin sự kiện</div><h2 class="red-accent">Thông tin tổ chức</h2></div><div class="event-grid"><div class="event reveal"><div class="label">Ngày</div><div class="value">18/05/2026</div></div><div class="event reveal"><div class="label">Thời gian</div><div class="value">13:30 - 17:00</div></div><div class="event reveal"><div class="label">Địa điểm</div><div class="value">Tầng 5, Phòng Lê Chân, Mercure Hải Phòng</div></div><div class="event reveal"><div class="label">Quy mô</div><div class="value">Chỉ hơn 100 ghế</div></div><div class="event reveal"><div class="label">Hình thức</div><div class="value">Không livestream - Không replay</div></div></div></div>
     </section>
 
     <section class="section"><div class="wrap"><div class="section-head reveal"><div class="kicker">Được tổ chức bởi</div><h2 class="red-accent">JCI Haiphong &amp; BNI Revia</h2><p class="lead">Những cộng đồng lãnh đạo trẻ đang đồng hành cùng thế hệ doanh nhân Hải Phòng để xây dựng doanh nghiệp hiệu quả hơn, bền vững hơn và có giá trị hơn cho địa phương.</p></div><div class="orgs reveal"><div class="org"><img src="images/jci-logo.png" alt="JCI Haiphong"><span>JCI Haiphong</span></div><div class="org"><img src="images/bni-logo.png" alt="BNI Chapter Revia"><span>BNI Chapter Revia</span></div></div></div></section>
@@ -1145,7 +1178,8 @@
   <footer class="footer">
     <div class="wrap footer-inner reveal">
       <div>
-        <strong style="display:block; letter-spacing: .08em; text-transform: uppercase;">X10 HIỆU SUẤT - LỢI NHUẬN | Thịnh vượng bền vững</strong>
+        <strong style="display:block; letter-spacing: .08em; text-transform: uppercase;">X10 HIỆU SUẤT - LỢI NHUẬN</strong>
+        <span style="display:block; color: var(--ink); font-weight: 800; margin-top: 4px;">Lợi nhuận thịnh vượng bền vững.</span>
         <span style="color: var(--muted);">Nếu cách cũ từng giúp doanh nghiệp đi đến hôm nay, liệu nó còn đủ để đưa anh chị đi qua giai đoạn này?</span>
         <div class="cta-row" style="margin-top: 16px;">
           <a class="btn btn-primary" href="#register">GIỮ GHẾ NGAY</a>
@@ -1153,7 +1187,7 @@
       </div>
       <div>
         <strong style="display:block;">Hotline hỗ trợ: 0902 084 031</strong>
-        <span style="color: var(--muted);">Thanh Xuân | 18.05.2026 | Mercure Hải Phòng | Hơn 100 ghế</span>
+        <span style="color: var(--muted);">Thanh Xuân - 18.05.2026 - Mercure Hải Phòng - Hơn 100 ghế</span>
       </div>
     </div>
   </footer>
