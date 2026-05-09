@@ -82,7 +82,8 @@
       mix-blend-mode: soft-light;
     }
 
-    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .wrap { width: min(1440px, calc(100% - 32px)); margin: 0 auto; }
+    .hero .wrap { width: min(960px, calc(100% - 32px)); }
     .section { padding: 96px 0; position: relative; }
     .panel {
       background: linear-gradient(180deg, var(--glass-strong), var(--glass));
@@ -177,7 +178,7 @@
     h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; }
     h1 {
       margin: 18px 0 14px;
-      font-size: clamp(2rem, 4.2vw, 4.65rem);
+      font-size: clamp(1.72rem, 3.35vw, 3.3rem);
       letter-spacing: -0.045em;
     }
     .hero-program-title {
@@ -226,9 +227,9 @@
     }
     .hero-proof {
       margin-top: 26px;
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
     }
     .chip {
       padding: 11px 14px;
@@ -240,12 +241,18 @@
       font-size: .9rem;
     }
     .metric-chip {
-      min-width: min(100%, 260px);
       padding: 18px 20px;
       border-radius: 24px;
       background: linear-gradient(180deg, rgba(177,31,31,0.15), rgba(255,255,255,0.2));
       border-color: rgba(177,31,31,0.28);
       box-shadow: 0 18px 46px rgba(61, 34, 14, 0.12);
+    }
+    .info-chip {
+      display:grid;
+      align-content:center;
+      min-height: 68px;
+      border-radius: 20px;
+      line-height: 1.35;
     }
     .metric-chip .metric-value {
       display:block;
@@ -541,6 +548,9 @@
       background: linear-gradient(180deg, rgba(217, 176, 108, 0.18), rgba(255,255,255,0.14));
       transform: translateY(-6px);
     }
+    .pricing-card.addon {
+      background: linear-gradient(180deg, rgba(126, 63, 42, 0.12), rgba(255,255,255,0.14));
+    }
     .pricing-tag {
       color: #b11f1f;
       font-size: .8rem;
@@ -603,6 +613,11 @@
       color: var(--muted);
       line-height: 1.75;
       text-align: center;
+    }
+    .pricing-note.compact {
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .form-box, .payment-box {
@@ -812,7 +827,7 @@
       .nav-inner { border-radius: 26px; }
     }
     @media (max-width: 640px) {
-      .wrap { width: min(100% - 20px, 1180px); }
+      .wrap, .hero .wrap { width: min(100% - 20px, 1440px); }
       .section { padding: 68px 0; }
       .hero-copy, .hero-side { padding: 20px; }
       .hero { min-height: auto; padding-top: 20px; }
@@ -831,14 +846,15 @@
         max-width: min(68vw, calc(100% - 24px));
         padding: 10px 10px 9px;
         border-radius: 24px;
-        font-size: clamp(1.18rem, 5.1vw, 1.74rem);
+        font-size: clamp(1.04rem, 4.5vw, 1.42rem);
         line-height: 1.02;
       }
-      .hero-program-title { font-size: clamp(.74rem, 3.2vw, 1.16rem); letter-spacing: -0.035em; }
-      .hero-kicker { font-size: clamp(.82rem, 3.3vw, 1.08rem); margin-top: 8px; }
+      .hero-program-title { font-size: clamp(.68rem, 2.9vw, .96rem); letter-spacing: -0.035em; }
+      .hero-kicker { font-size: clamp(.72rem, 3vw, .94rem); margin-top: 8px; }
       .hero-title-line { display: inline; }
       .hero-sub { line-height: 1.74; }
       .hero-proof { margin-top: 20px; }
+      .hero-proof { grid-template-columns: 1fr; }
       .chip { width: 100%; }
       .btn { width: 100%; }
       .cta-row { flex-direction: column; }
@@ -890,8 +906,8 @@
           <div class="hero-proof">
             <div class="chip metric-chip"><span class="metric-value">6.000+</span><span class="metric-label">Kết quả X10</span></div>
             <div class="chip metric-chip"><span class="metric-value">~330 tỷ</span><span class="metric-label">Đồng lợi nhuận</span></div>
-            <div class="chip">13:30 - 17:00 - Tầng 5, Phòng Lê Chân</div>
-            <div class="chip"><strong>Chỉ hơn 100 ghế - Không livestream - Không replay</strong></div>
+            <div class="chip info-chip"><strong>13:30 - 17:00</strong><span>Tầng 5, Phòng Lê Chân<br>Mercure Hải Phòng</span></div>
+            <div class="chip info-chip"><strong>Chỉ hơn 100 ghế</strong><span>Không livestream - Không replay</span></div>
           </div>
           <div class="cta-row">
             <a class="btn btn-primary" href="#register">GIỮ GHẾ NGAY</a>
@@ -1083,14 +1099,14 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="kicker">Agenda chương trình</div>
-          <h2 class="red-accent">Một buổi chiều để nhìn lại cách cũ và mở ra tư duy X10.</h2>
+          <h2 class="red-accent">Agenda sự kiện</h2>
         </div>
         <div class="agenda">
-          <div class="agenda-item reveal"><div class="agenda-time">13:30 - 14:00</div><div><h3>Đón khách, check-in, networking</h3><p>Ổn định chỗ ngồi và kết nối với cộng đồng doanh nhân cùng tham dự.</p></div></div>
-          <div class="agenda-item reveal"><div class="agenda-time">14:00 - 15:20</div><div><h3>Phần 1 - Vì sao cách cũ không còn đủ?</h3><p>Mở ra câu hỏi về hệ điều hành lãnh đạo, áp lực tăng trưởng và những điểm nghẽn thường bị bỏ qua.</p></div></div>
-          <div class="agenda-item reveal"><div class="agenda-time">15:20 - 15:40</div><div><h3>Tea break &amp; kết nối</h3><p>Nghỉ ngắn, trao đổi tự nhiên và tiếp tục mở rộng kết nối.</p></div></div>
-          <div class="agenda-item reveal"><div class="agenda-time">15:40 - 16:50</div><div><h3>Phần 2 - X10: từ tư duy tới kết quả</h3><p>Câu chuyện ABBANK, bài học điều hành và cách mục tiêu X10 buộc tổ chức bước ra khỏi cách nghĩ cũ.</p></div></div>
-          <div class="agenda-item reveal"><div class="agenda-time">16:50 - 17:00</div><div><h3>Q&amp;A, tổng kết và kết nối sau chương trình</h3><p>Nhìn lại thông điệp chính và mở không gian trao đổi trực tiếp sau buổi chia sẻ.</p></div></div>
+          <div class="agenda-item reveal"><div class="agenda-time">13:00 - 14:00</div><div><h3>Tham quan gian hàng</h3><p>Đón khách, check-in và kết nối trước chương trình.</p></div></div>
+          <div class="agenda-item reveal"><div class="agenda-time">14:00 - 15:45</div><div><h3>Diễn giả chia sẻ</h3><p>Câu chuyện X10 từ thực tế điều hành và những bài học từ kết quả thật.</p></div></div>
+          <div class="agenda-item reveal"><div class="agenda-time">15:45 - 16:00</div><div><h3>Teabreak</h3><p>Nghỉ ngắn và kết nối cùng cộng đồng doanh nhân tham dự.</p></div></div>
+          <div class="agenda-item reveal"><div class="agenda-time">16:00 - 17:00</div><div><h3>Q&amp;A</h3><p>Trao đổi trực tiếp với diễn giả và làm rõ các câu hỏi thực tế.</p></div></div>
+          <div class="agenda-item reveal"><div class="agenda-time">17:00 - 20:00</div><div><h3>Giao lưu ăn tối cùng diễn giả</h3><p>Không gian kết nối sâu hơn sau chương trình chính.</p></div></div>
         </div>
       </div>
     </section>
@@ -1104,29 +1120,44 @@
         <div class="grid-3">
           <div class="pricing-card featured reveal">
             <div class="pricing-tag red-accent">EARLY BIRD</div>
-            <div class="pricing-name">Đăng ký trước 24:00 ngày 15/05</div>
-            <div class="price"><div class="old">559.000 VNĐ</div><div class="now">299K</div><div class="currency">VNĐ</div></div>
+            <div class="pricing-name">Trước ngày 15/5</div>
+            <div class="price"><div class="now">299K</div><div class="currency">VNĐ / người</div></div>
             <div class="features"><div>1 vé tham dự chương trình</div><div>Tea break và networking</div><div>Xác nhận chỗ ngồi trước sự kiện</div></div>
             <a class="pricing-cta" href="#register">Đăng ký vé này</a>
           </div>
           <div class="pricing-card reveal">
             <div class="pricing-tag red-accent">VÉ NHÓM 5</div>
-            <div class="pricing-name">Dành cho nhóm doanh nghiệp hoặc đội ngũ</div>
+            <div class="pricing-name">Áp dụng cho nhóm 5 người</div>
             <div class="price"><div class="now">285K</div><div class="currency">VNĐ / người</div></div>
-            <div class="features"><div>Áp dụng khi đăng ký từ 5 vé</div><div>Phù hợp cho nhóm lãnh đạo</div><div>Tea break và networking</div></div>
+            <div class="features"><div>Phù hợp cho nhóm lãnh đạo</div><div>Giữ ghế theo nhóm</div><div>Tea break và networking</div></div>
             <a class="pricing-cta" href="#register">Đăng ký vé này</a>
           </div>
           <div class="pricing-card reveal">
-            <div class="pricing-tag red-accent">VÉ NHÓM 10</div>
-            <div class="pricing-name">Mức ưu tiên tốt nhất cho nhóm lớn</div>
+            <div class="pricing-tag red-accent">VÉ NHÓM 10 / CỘNG ĐỒNG</div>
+            <div class="pricing-name">Nhóm 10 người hoặc TV JCI, BNI, DNHP</div>
             <div class="price"><div class="now">259K</div><div class="currency">VNĐ / người</div></div>
-            <div class="features"><div>Áp dụng khi đăng ký từ 10 vé</div><div>Ưu tiên cho cộng đồng đối tác</div><div>Tea break và networking</div></div>
+            <div class="features"><div>Mức ưu tiên tốt nhất</div><div>Áp dụng cho thành viên cộng đồng</div><div>Tea break và networking</div></div>
             <a class="pricing-cta" href="#register">Đăng ký vé này</a>
           </div>
         </div>
-        <div class="pricing-note reveal">
-          Áp dụng ưu tiên cho cộng đồng: <strong>JCI Haiphong</strong>, <strong>BNI</strong>, <strong>Cộng đồng Doanh nghiệp Hạnh Phúc</strong>.<br>
-          Giá niêm yết: <strong class="red-accent">559.000 VNĐ</strong>.
+        <div class="grid-2" style="margin-top: 20px;">
+          <div class="pricing-card reveal">
+            <div class="pricing-tag red-accent">GIÁ NIÊM YẾT</div>
+            <div class="pricing-name">Vé tiêu chuẩn</div>
+            <div class="price"><div class="now">559K</div><div class="currency">VNĐ / người</div></div>
+            <div class="features"><div>Áp dụng ngoài các nhóm ưu đãi</div><div>1 vé tham dự chương trình</div></div>
+            <a class="pricing-cta" href="#register">Đăng ký vé này</a>
+          </div>
+          <div class="pricing-card addon reveal">
+            <div class="pricing-tag red-accent">TÙY CHỌN THÊM</div>
+            <div class="pricing-name">Ăn tối cùng diễn giả</div>
+            <div class="price"><div class="now">400K</div><div class="currency">VNĐ / người</div></div>
+            <div class="features"><div>Giao lưu ăn tối sau chương trình</div><div>17:00 - 20:00</div></div>
+            <a class="pricing-cta" href="#register">Đăng ký kèm ăn tối</a>
+          </div>
+        </div>
+        <div class="pricing-note compact reveal">
+          Mức <strong>259K / người</strong> áp dụng cho vé nhóm 10 người hoặc thành viên <strong>JCI</strong>, <strong>BNI</strong>, <strong>DNHP</strong>.
         </div>
       </div>
     </section>
