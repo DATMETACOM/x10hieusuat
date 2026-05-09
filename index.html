@@ -178,12 +178,14 @@
     h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; }
     h1 {
       margin: 18px 0 16px;
-      font-size: clamp(2.25rem, 4.4vw, 4.8rem);
-      letter-spacing: -0.05em;
+      font-size: clamp(2rem, 3.55vw, 3.65rem);
+      letter-spacing: -0.04em;
     }
     .hero-program-title {
       display:block;
-      white-space: nowrap;
+      max-width: 12.5ch;
+      text-wrap: balance;
+      white-space: normal;
     }
     .hero-kicker {
       display:block;
@@ -401,6 +403,24 @@
     }
     .video-cover .speaker-caption {
       text-align: center;
+    }
+    .video-cover.is-playing {
+      background: #000;
+      cursor: default;
+    }
+    .video-cover.is-playing::before,
+    .video-cover.is-playing::after,
+    .video-cover.is-playing .speaker-caption {
+      display: none;
+    }
+    .video-cover iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      z-index: 3;
+      border-radius: inherit;
     }
     .speaker-meta {
       display:flex;
@@ -762,53 +782,6 @@
       padding-top: 18px;
       border-top: 1px solid rgba(25,21,17,0.12);
     }
-    .modal {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: rgba(12, 10, 8, 0.78);
-    }
-    .modal.open { display: flex; }
-    .modal-card {
-      width: min(520px, 100%);
-      position: relative;
-    }
-    .modal-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      overflow: hidden;
-      border-radius: 24px;
-      background: #000;
-      box-shadow: 0 28px 90px rgba(0,0,0,.44);
-    }
-    .modal-frame iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .modal-close {
-      position: absolute;
-      top: -16px;
-      right: -10px;
-      z-index: 2;
-      width: 42px;
-      height: 42px;
-      border: 0;
-      border-radius: 999px;
-      background: #fff8ec;
-      color: var(--ink);
-      font-size: 1.4rem;
-      cursor: pointer;
-      box-shadow: 0 12px 32px rgba(0,0,0,.24);
-    }
-
     .hero-panel {
       position: relative;
     }
@@ -873,11 +846,10 @@
       .hero-mobile-visual .speaker-portrait img { transform: scale(1.42); }
       .hero-copy h1 {
         margin: 16px 0 0;
-        font-size: clamp(2rem, 10.2vw, 3.1rem);
-        line-height: 1;
+        text-align: center;
       }
-      .hero-program-title { white-space: normal; }
-      .hero-kicker { font-size: clamp(1.02rem, 5vw, 1.24rem); margin-top: 10px; }
+      .hero-program-title { max-width: none; }
+      .hero-kicker { font-size: clamp(1.02rem, 4.6vw, 1.24rem); margin-top: 10px; }
       .hero-title-line { display: inline; }
       .hero-sub { line-height: 1.74; }
       .hero-proof { margin-top: 20px; }
@@ -920,7 +892,7 @@
           <div class="eyebrow">18.05.2026 - Mercure Hải Phòng - Hơn 100 ghế</div>
           <h1 class="red-accent"><span class="hero-program-title">X10 HIỆU SUẤT - LỢI NHUẬN</span><span class="hero-kicker">Lợi nhuận thịnh vượng bền vững.</span></h1>
           <div class="hero-mobile-visual">
-            <div class="speaker-portrait video-cover" data-video-trigger role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
+            <div class="speaker-portrait video-cover" data-video-trigger data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
               <img src="images/speaker-primary.png" alt="Phạm Duy Hiếu">
               <div class="speaker-caption">Xem video short</div>
             </div>
@@ -945,12 +917,12 @@
           </div>
           <div class="cta-row">
             <a class="btn btn-primary" href="#register">GIỮ GHẾ NGAY</a>
-            <a class="btn btn-secondary" href="#speaker" data-video-trigger>Xem video diễn giả</a>
+            <a class="btn btn-secondary" href="#speaker" data-video-trigger data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0">Xem video diễn giả</a>
           </div>
         </div>
 
         <div class="panel hero-side reveal">
-          <div class="speaker-portrait video-cover" data-video-trigger role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
+          <div class="speaker-portrait video-cover" data-video-trigger data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
             <img src="images/speaker-primary.png" alt="Phạm Duy Hiếu">
             <div class="speaker-caption">Phạm Duy Hiếu - Tổng Giám đốc ABBANK<br>Xem video short</div>
           </div>
@@ -1023,7 +995,7 @@
           <p class="lead">Anh không nói từ lý thuyết. Anh nói từ những lần khủng hoảng, những lần quay lại, những lần thay đổi chính mình để thay đổi cả một hệ thống.</p>
         </div>
         <div class="panel card speaker-layout reveal">
-          <div class="speaker-portrait video-cover" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
+          <div class="speaker-portrait video-cover" data-video-trigger data-video-url="https://www.youtube.com/embed/JBGJl64BxKo?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
             <img src="images/speaker-secondary.png" alt="Phạm Duy Hiếu">
             <div class="speaker-caption">Xem video short</div>
           </div>
@@ -1214,15 +1186,6 @@
     <section class="section"><div class="wrap"><div class="section-head reveal"><div class="kicker">Được tổ chức bởi</div><h2 class="red-accent">JCI Haiphong &amp; BNI Revia</h2><p class="lead">Những cộng đồng lãnh đạo trẻ đang đồng hành cùng thế hệ doanh nhân Hải Phòng để xây dựng doanh nghiệp hiệu quả hơn, bền vững hơn và có giá trị hơn cho địa phương.</p></div><div class="orgs reveal"><div class="org"><img src="images/jci-logo.png" alt="JCI Haiphong"><span>JCI Haiphong</span></div><div class="org"><img src="images/bni-logo.png" alt="BNI Chapter Revia"><span>BNI Chapter Revia</span></div></div></div></section>
   </main>
 
-  <div class="modal" id="speakerVideoModal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Video short Phạm Duy Hiếu">
-      <button class="modal-close" type="button" aria-label="Đóng video">×</button>
-      <div class="modal-frame">
-        <iframe id="speakerVideoFrame" title="Video short Phạm Duy Hiếu" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
   <footer class="footer">
     <div class="wrap footer-inner reveal">
       <div>
@@ -1249,42 +1212,30 @@
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-    const videoModal = document.getElementById('speakerVideoModal');
-    const videoFrame = document.getElementById('speakerVideoFrame');
     const videoTriggers = document.querySelectorAll('[data-video-trigger], .video-cover');
-    const closeVideo = document.querySelector('.modal-close');
-    const speakerVideoUrl = 'https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0';
+    const defaultVideoUrl = 'https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0';
 
-    function openVideoModal(event) {
+    function playInlineVideo(event) {
       event?.preventDefault();
-      videoFrame.src = speakerVideoUrl;
-      videoModal.classList.add('open');
-      videoModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeVideoModal() {
-      videoModal.classList.remove('open');
-      videoModal.setAttribute('aria-hidden', 'true');
-      videoFrame.src = '';
-      document.body.style.overflow = '';
+      const trigger = event?.currentTarget;
+      const source = trigger?.dataset?.videoUrl || defaultVideoUrl;
+      const target = trigger?.classList?.contains('video-cover')
+        ? trigger
+        : document.querySelector(`.hero-side .video-cover[data-video-url="${source}"], .video-cover[data-video-url="${source}"]`);
+      if (!target || target.classList.contains('is-playing')) return;
+      target.classList.add('is-playing');
+      target.setAttribute('aria-label', 'Video đang phát');
+      target.innerHTML = `<iframe title="Video short Phạm Duy Hiếu" src="${source}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
     }
 
     videoTriggers.forEach((trigger) => {
-      trigger.addEventListener('click', openVideoModal);
+      trigger.addEventListener('click', playInlineVideo);
       trigger.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          openVideoModal();
+          playInlineVideo(event);
         }
       });
-    });
-    closeVideo?.addEventListener('click', closeVideoModal);
-    videoModal?.addEventListener('click', (event) => {
-      if (event.target === videoModal) closeVideoModal();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && videoModal?.classList.contains('open')) closeVideoModal();
     });
   </script>
 </body>
