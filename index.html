@@ -792,9 +792,9 @@
         position: relative;
         z-index: 2;
         display: inline-block;
-        width: auto;
-        max-width: 100%;
-        min-width: min(620px, calc(100% - 36px));
+        width: max-content;
+        max-width: min(68vw, 620px);
+        min-width: 0;
         margin: -132px 0 20px 18px;
         padding: 14px 28px 10px;
         border-radius: 28px;
@@ -827,14 +827,15 @@
       .hero-mobile-visual .speaker-portrait img { transform: scale(1.42); }
       .hero-copy h1 {
         margin: -120px 0 18px 12px;
-        width: calc(100% - 24px);
-        padding: 10px 12px 9px;
+        width: max-content;
+        max-width: min(68vw, calc(100% - 24px));
+        padding: 10px 10px 9px;
         border-radius: 24px;
-        font-size: clamp(1.62rem, 7vw, 2.12rem);
+        font-size: clamp(1.18rem, 5.1vw, 1.74rem);
         line-height: 1.02;
       }
-      .hero-program-title { font-size: clamp(1.06rem, 4.8vw, 1.72rem); letter-spacing: -0.04em; }
-      .hero-kicker { font-size: 1.08rem; margin-top: 8px; }
+      .hero-program-title { font-size: clamp(.74rem, 3.2vw, 1.16rem); letter-spacing: -0.035em; }
+      .hero-kicker { font-size: clamp(.82rem, 3.3vw, 1.08rem); margin-top: 8px; }
       .hero-title-line { display: inline; }
       .hero-sub { line-height: 1.74; }
       .hero-proof { margin-top: 20px; }
