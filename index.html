@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>X10 HIỆU SUẤT - LỢI NHUẬN - Lợi nhuận thịnh vượng bền vững</title>
-  <meta name="description" content="X10 HIỆU SUẤT - LỢI NHUẬN - Lợi nhuận thịnh vượng bền vững dành cho doanh nhân Hải Phòng đang cần nâng cấp hệ điều hành lãnh đạo để bước tiếp trong giai đoạn mới.">
+  <title>X10 HIỆU SUẤT LỢI NHUẬN - Thịnh vượng bền vững</title>
+  <meta name="description" content="X10 HIỆU SUẤT LỢI NHUẬN - Thịnh vượng bền vững dành cho doanh nhân Hải Phòng đang cần nâng cấp hệ điều hành lãnh đạo để bước tiếp trong giai đoạn mới.">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="X10 HIỆU SUẤT - LỢI NHUẬN">
+  <meta property="og:site_name" content="X10 HIỆU SUẤT LỢI NHUẬN">
   <meta property="og:url" content="https://x10hieusuat.vercel.app/">
-  <meta property="og:title" content="X10 HIỆU SUẤT - LỢI NHUẬN - Lợi nhuận thịnh vượng bền vững">
+  <meta property="og:title" content="X10 HIỆU SUẤT LỢI NHUẬN - Thịnh vượng bền vững">
   <meta property="og:description" content="Ngày 18/05/2026 tại Mercure Hải Phòng, hơn 100 doanh nhân cùng nghe câu chuyện X10 từ ABBANK và anh Phạm Duy Hiếu.">
   <meta property="og:image" content="https://x10hieusuat.vercel.app/images/bg-hero.jpg">
   <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:alt" content="X10 HIỆU SUẤT - LỢI NHUẬN - Lợi nhuận thịnh vượng bền vững">
+  <meta property="og:image:alt" content="X10 HIỆU SUẤT LỢI NHUẬN - Thịnh vượng bền vững">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="X10 HIỆU SUẤT - LỢI NHUẬN - Lợi nhuận thịnh vượng bền vững">
+  <meta name="twitter:title" content="X10 HIỆU SUẤT LỢI NHUẬN - Thịnh vượng bền vững">
   <meta name="twitter:description" content="Dành cho doanh nhân Hải Phòng đang cần nâng cấp hệ điều hành lãnh đạo để bước tiếp.">
   <meta name="twitter:image" content="https://x10hieusuat.vercel.app/images/bg-hero.jpg">
   <link rel="image_src" href="https://x10hieusuat.vercel.app/images/bg-hero.jpg">
@@ -178,7 +178,7 @@
     h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; }
     h1 {
       margin: 18px 0 16px;
-      font-size: clamp(2rem, 3.55vw, 3.65rem);
+      font-size: clamp(1.82rem, 3.1vw, 3.25rem);
       letter-spacing: -0.04em;
     }
     .hero-program-title {
@@ -381,7 +381,11 @@
     }
     .video-cover {
       cursor: pointer;
-      min-height: 520px;
+      aspect-ratio: 9 / 16;
+      min-height: 0;
+      height: auto;
+      max-height: min(72vh, 620px);
+      width: 100%;
     }
     .video-cover::before {
       content: "▶";
@@ -822,12 +826,15 @@
         height: clamp(320px, 54vh, 520px);
         border-radius: 32px;
       }
+      .hero-mobile-visual .video-cover {
+        height: auto;
+      }
       .hero-copy h1 {
         text-align: left;
       }
       .agenda-item { grid-template-columns: 1fr; }
       .speaker-portrait { min-height: 360px; }
-      .video-cover { min-height: 430px; }
+      .video-cover { min-height: 0; max-height: none; }
       .nav-inner { border-radius: 26px; }
     }
     @media (max-width: 640px) {
@@ -842,6 +849,9 @@
         min-height: 0;
         height: min(52vh, 430px);
         border-radius: 24px;
+      }
+      .hero-mobile-visual .video-cover {
+        height: auto;
       }
       .hero-mobile-visual .speaker-portrait img { transform: scale(1.42); }
       .hero-copy h1 {
@@ -860,7 +870,7 @@
       .btn { width: 100%; }
       .cta-row { flex-direction: column; }
       .speaker-portrait { min-height: 320px; }
-      .video-cover { min-height: 360px; }
+      .video-cover { min-height: 0; }
       .video-cover::before { display: none; }
       .price .now { font-size: 2.6rem; }
       .nav-cta { padding: 10px 14px; font-size: .9rem; }
@@ -878,8 +888,8 @@
       <div class="brand">
         <img src="images/jci-logo.png" alt="JCI Haiphong">
         <div>
-          <strong class="red-accent">X10 HIỆU SUẤT - LỢI NHUẬN</strong>
-          <span>Lợi nhuận thịnh vượng bền vững.</span>
+          <strong class="red-accent">X10 HIỆU SUẤT LỢI NHUẬN</strong>
+          <span>Thịnh vượng bền vững</span>
         </div>
       </div>
       <a class="nav-cta" href="#register">GIỮ GHẾ</a>
@@ -891,7 +901,7 @@
       <div class="wrap hero-grid">
         <div class="panel hero-copy reveal">
           <div class="eyebrow">18.05.2026 - Mercure Hải Phòng - Hơn 100 ghế</div>
-          <h1 class="red-accent"><span class="hero-program-title">X10 HIỆU SUẤT - LỢI NHUẬN</span><span class="hero-kicker">Lợi nhuận thịnh vượng bền vững.</span></h1>
+          <h1 class="red-accent"><span class="hero-program-title">X10 HIỆU SUẤT LỢI NHUẬN</span><span class="hero-kicker">Thịnh vượng bền vững</span></h1>
           <div class="hero-mobile-visual">
             <div class="speaker-portrait video-cover" data-hero-video data-video-trigger data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
               <img src="images/speaker-primary.png" alt="Phạm Duy Hiếu">
@@ -918,7 +928,7 @@
           </div>
           <div class="cta-row">
             <a class="btn btn-primary" href="#register">GIỮ GHẾ NGAY</a>
-            <a class="btn btn-secondary" href="#hero-video" data-hero-video-cta data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0">Xem video diễn giả</a>
+            <a class="btn btn-secondary" href="#speaker-video" data-speaker-video-cta data-video-url="https://www.youtube.com/embed/JBGJl64BxKo?autoplay=1&rel=0">Xem video diễn giả</a>
           </div>
         </div>
 
@@ -996,7 +1006,7 @@
           <p class="lead">Anh không nói từ lý thuyết. Anh nói từ những lần khủng hoảng, những lần quay lại, những lần thay đổi chính mình để thay đổi cả một hệ thống.</p>
         </div>
         <div class="panel card speaker-layout reveal">
-          <div class="speaker-portrait video-cover" data-video-trigger data-video-url="https://www.youtube.com/embed/JBGJl64BxKo?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
+          <div class="speaker-portrait video-cover" id="speaker-video" data-speaker-video data-video-trigger data-video-url="https://www.youtube.com/embed/JBGJl64BxKo?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
             <img src="images/speaker-secondary.png" alt="Phạm Duy Hiếu">
             <div class="speaker-caption">Xem video short</div>
           </div>
@@ -1190,8 +1200,8 @@
   <footer class="footer">
     <div class="wrap footer-inner reveal">
       <div>
-        <strong style="display:block; letter-spacing: .08em; text-transform: uppercase;">X10 HIỆU SUẤT - LỢI NHUẬN</strong>
-        <span style="display:block; color: var(--ink); font-weight: 800; margin-top: 4px;">Lợi nhuận thịnh vượng bền vững.</span>
+        <strong style="display:block; letter-spacing: .08em; text-transform: uppercase;">X10 HIỆU SUẤT LỢI NHUẬN</strong>
+        <span style="display:block; color: var(--ink); font-weight: 800; margin-top: 4px;">Thịnh vượng bền vững</span>
         <span style="color: var(--muted);">Nếu cách cũ từng giúp doanh nghiệp đi đến hôm nay, liệu nó còn đủ để đưa anh chị đi qua giai đoạn này?</span>
         <div class="cta-row" style="margin-top: 16px;">
           <a class="btn btn-primary" href="#register">GIỮ GHẾ NGAY</a>
@@ -1214,29 +1224,19 @@
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
     const videoTriggers = document.querySelectorAll('[data-video-trigger]');
-    const heroVideoCta = document.querySelector('[data-hero-video-cta]');
-    const videoCovers = document.querySelectorAll('.video-cover[data-video-url]');
+    const speakerVideoCta = document.querySelector('[data-speaker-video-cta]');
     const defaultVideoUrl = 'https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0';
 
-    function withVideoParams(source, muted) {
+    function withVideoParams(source) {
       const separator = source.includes('?') ? '&' : '?';
-      return `${source}${separator}playsinline=1${muted ? '&mute=1' : ''}`;
-    }
-
-    function isVisible(element) {
-      return Boolean(element?.offsetParent);
-    }
-
-    function getVisibleHeroVideo() {
-      return Array.from(document.querySelectorAll('[data-hero-video]')).find(isVisible);
+      return `${source}${separator}playsinline=1`;
     }
 
     function playInlineVideoOn(target, source, options = {}) {
       if (!target) return;
       if (target.classList.contains('is-playing') && !options.force) return;
-      const videoSource = withVideoParams(source || target.dataset.videoUrl || defaultVideoUrl, Boolean(options.muted));
+      const videoSource = withVideoParams(source || target.dataset.videoUrl || defaultVideoUrl);
       target.classList.add('is-playing');
-      target.dataset.playedOnce = 'true';
       target.setAttribute('aria-label', 'Video đang phát');
       target.innerHTML = `<iframe title="Video short Phạm Duy Hiếu" src="${videoSource}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
     }
@@ -1247,13 +1247,13 @@
       playInlineVideoOn(trigger, trigger?.dataset?.videoUrl || defaultVideoUrl, { muted: false, force: true });
     }
 
-    function playHeroVideoFromCta(event) {
+    function playSpeakerVideoFromCta(event) {
       event?.preventDefault();
-      const target = getVisibleHeroVideo();
+      const target = document.querySelector('[data-speaker-video]');
       if (!target) return;
       target.scrollIntoView({ behavior: 'smooth', block: 'center' });
       window.setTimeout(() => {
-        playInlineVideoOn(target, event.currentTarget.dataset.videoUrl || target.dataset.videoUrl || defaultVideoUrl, { muted: false, force: true });
+        playInlineVideoOn(target, event.currentTarget.dataset.videoUrl || target.dataset.videoUrl || defaultVideoUrl, { force: true });
       }, 260);
     }
 
@@ -1266,17 +1266,7 @@
         }
       });
     });
-    heroVideoCta?.addEventListener('click', playHeroVideoFromCta);
-
-    const videoAutoplayObserver = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting || entry.target.dataset.playedOnce === 'true') continue;
-        playInlineVideoOn(entry.target, entry.target.dataset.videoUrl || defaultVideoUrl, { muted: true });
-        videoAutoplayObserver.unobserve(entry.target);
-      }
-    }, { threshold: 0.55 });
-
-    videoCovers.forEach((cover) => videoAutoplayObserver.observe(cover));
+    speakerVideoCta?.addEventListener('click', playSpeakerVideoFromCta);
   </script>
 </body>
 </html>
