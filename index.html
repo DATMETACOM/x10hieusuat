@@ -10,14 +10,14 @@
   <meta property="og:url" content="https://x10hieusuat.vercel.app/">
   <meta property="og:title" content="X10 HIỆU SUẤT LỢI NHUẬN - Thịnh vượng bền vững">
   <meta property="og:description" content="Ngày 18/05/2026 tại Mercure Hải Phòng, hơn 100 doanh nhân cùng nghe câu chuyện X10 từ ABBANK và anh Phạm Duy Hiếu.">
-  <meta property="og:image" content="https://x10hieusuat.vercel.app/images/bg-hero.jpg">
+  <meta property="og:image" content="https://x10hieusuat.vercel.app/images/bg%20ver%202.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:alt" content="X10 HIỆU SUẤT LỢI NHUẬN - Thịnh vượng bền vững">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="X10 HIỆU SUẤT LỢI NHUẬN - Thịnh vượng bền vững">
   <meta name="twitter:description" content="Dành cho doanh nhân Hải Phòng đang cần nâng cấp hệ điều hành lãnh đạo để bước tiếp.">
-  <meta name="twitter:image" content="https://x10hieusuat.vercel.app/images/bg-hero.jpg">
-  <link rel="image_src" href="https://x10hieusuat.vercel.app/images/bg-hero.jpg">
+  <meta name="twitter:image" content="https://x10hieusuat.vercel.app/images/bg%20ver%202.jpg">
+  <link rel="image_src" href="https://x10hieusuat.vercel.app/images/bg%20ver%202.jpg">
   <meta name="theme-color" content="#b11f1f">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +59,7 @@
       position: fixed;
       inset: 0;
       z-index: -3;
-      background: url('images/bg-hero.jpg') center/cover no-repeat;
+      background: url('images/bg ver 2.jpg') center/cover no-repeat;
       filter: saturate(1.02) contrast(1.02) brightness(0.98);
       transform: scale(1.02);
     }
@@ -407,6 +407,22 @@
     }
     .video-cover .speaker-caption {
       text-align: center;
+    }
+    .video-cover .speaker-caption .caption-name {
+      display:block;
+      margin-bottom: 12px;
+    }
+    .video-cover .speaker-caption .video-button {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(255, 248, 236, 0.92);
+      color: #b11f1f;
+      font-weight: 900;
+      text-shadow: none;
+      box-shadow: 0 12px 32px rgba(25,21,17,0.22);
     }
     .video-cover.is-playing {
       background: #000;
@@ -905,7 +921,7 @@
           <div class="hero-mobile-visual">
             <div class="speaker-portrait video-cover" data-hero-video data-video-trigger data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
               <img src="images/speaker-primary.png" alt="Phạm Duy Hiếu">
-              <div class="speaker-caption">Xem video short</div>
+              <div class="speaker-caption"><span class="video-button">Xem video short</span></div>
             </div>
           </div>
           <p class="hero-sub">
@@ -935,7 +951,7 @@
         <div class="panel hero-side reveal">
           <div class="speaker-portrait video-cover" id="hero-video" data-hero-video data-video-trigger data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
             <img src="images/speaker-primary.png" alt="Phạm Duy Hiếu">
-            <div class="speaker-caption">Phạm Duy Hiếu - Tổng Giám đốc ABBANK<br>Xem video short</div>
+            <div class="speaker-caption"><span class="caption-name">Phạm Duy Hiếu - Tổng Giám đốc ABBANK</span><span class="video-button">Xem video short</span></div>
           </div>
         </div>
       </div>
@@ -1008,7 +1024,7 @@
         <div class="panel card speaker-layout reveal">
           <div class="speaker-portrait video-cover" id="speaker-video" data-speaker-video data-video-trigger data-video-url="https://www.youtube.com/embed/JBGJl64BxKo?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
             <img src="images/speaker-secondary.png" alt="Phạm Duy Hiếu">
-            <div class="speaker-caption">Xem video short</div>
+            <div class="speaker-caption"><span class="video-button">Xem video short</span></div>
           </div>
           <div class="speaker-bio">
             <div>
