@@ -861,6 +861,7 @@
       .cta-row { flex-direction: column; }
       .speaker-portrait { min-height: 320px; }
       .video-cover { min-height: 360px; }
+      .video-cover::before { display: none; }
       .price .now { font-size: 2.6rem; }
       .nav-cta { padding: 10px 14px; font-size: .9rem; }
       .brand strong { font-size: clamp(.58rem, 2.45vw, .76rem); letter-spacing: .035em; line-height: 1.15; white-space: nowrap; }
@@ -892,7 +893,7 @@
           <div class="eyebrow">18.05.2026 - Mercure Hải Phòng - Hơn 100 ghế</div>
           <h1 class="red-accent"><span class="hero-program-title">X10 HIỆU SUẤT - LỢI NHUẬN</span><span class="hero-kicker">Lợi nhuận thịnh vượng bền vững.</span></h1>
           <div class="hero-mobile-visual">
-            <div class="speaker-portrait video-cover" data-video-trigger data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
+            <div class="speaker-portrait video-cover" data-hero-video data-video-trigger data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
               <img src="images/speaker-primary.png" alt="Phạm Duy Hiếu">
               <div class="speaker-caption">Xem video short</div>
             </div>
@@ -917,12 +918,12 @@
           </div>
           <div class="cta-row">
             <a class="btn btn-primary" href="#register">GIỮ GHẾ NGAY</a>
-            <a class="btn btn-secondary" href="#speaker" data-video-trigger data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0">Xem video diễn giả</a>
+            <a class="btn btn-secondary" href="#hero-video" data-hero-video-cta data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0">Xem video diễn giả</a>
           </div>
         </div>
 
         <div class="panel hero-side reveal">
-          <div class="speaker-portrait video-cover" data-video-trigger data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
+          <div class="speaker-portrait video-cover" id="hero-video" data-hero-video data-video-trigger data-video-url="https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0" role="button" tabindex="0" aria-label="Xem video short của Phạm Duy Hiếu">
             <img src="images/speaker-primary.png" alt="Phạm Duy Hiếu">
             <div class="speaker-caption">Phạm Duy Hiếu - Tổng Giám đốc ABBANK<br>Xem video short</div>
           </div>
@@ -1212,20 +1213,48 @@
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-    const videoTriggers = document.querySelectorAll('[data-video-trigger], .video-cover');
+    const videoTriggers = document.querySelectorAll('[data-video-trigger]');
+    const heroVideoCta = document.querySelector('[data-hero-video-cta]');
+    const videoCovers = document.querySelectorAll('.video-cover[data-video-url]');
     const defaultVideoUrl = 'https://www.youtube.com/embed/tQEf4_ak51o?autoplay=1&rel=0';
+
+    function withVideoParams(source, muted) {
+      const separator = source.includes('?') ? '&' : '?';
+      return `${source}${separator}playsinline=1${muted ? '&mute=1' : ''}`;
+    }
+
+    function isVisible(element) {
+      return Boolean(element?.offsetParent);
+    }
+
+    function getVisibleHeroVideo() {
+      return Array.from(document.querySelectorAll('[data-hero-video]')).find(isVisible);
+    }
+
+    function playInlineVideoOn(target, source, options = {}) {
+      if (!target) return;
+      if (target.classList.contains('is-playing') && !options.force) return;
+      const videoSource = withVideoParams(source || target.dataset.videoUrl || defaultVideoUrl, Boolean(options.muted));
+      target.classList.add('is-playing');
+      target.dataset.playedOnce = 'true';
+      target.setAttribute('aria-label', 'Video đang phát');
+      target.innerHTML = `<iframe title="Video short Phạm Duy Hiếu" src="${videoSource}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    }
 
     function playInlineVideo(event) {
       event?.preventDefault();
       const trigger = event?.currentTarget;
-      const source = trigger?.dataset?.videoUrl || defaultVideoUrl;
-      const target = trigger?.classList?.contains('video-cover')
-        ? trigger
-        : document.querySelector(`.hero-side .video-cover[data-video-url="${source}"], .video-cover[data-video-url="${source}"]`);
-      if (!target || target.classList.contains('is-playing')) return;
-      target.classList.add('is-playing');
-      target.setAttribute('aria-label', 'Video đang phát');
-      target.innerHTML = `<iframe title="Video short Phạm Duy Hiếu" src="${source}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+      playInlineVideoOn(trigger, trigger?.dataset?.videoUrl || defaultVideoUrl, { muted: false, force: true });
+    }
+
+    function playHeroVideoFromCta(event) {
+      event?.preventDefault();
+      const target = getVisibleHeroVideo();
+      if (!target) return;
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      window.setTimeout(() => {
+        playInlineVideoOn(target, event.currentTarget.dataset.videoUrl || target.dataset.videoUrl || defaultVideoUrl, { muted: false, force: true });
+      }, 260);
     }
 
     videoTriggers.forEach((trigger) => {
@@ -1237,6 +1266,17 @@
         }
       });
     });
+    heroVideoCta?.addEventListener('click', playHeroVideoFromCta);
+
+    const videoAutoplayObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting || entry.target.dataset.playedOnce === 'true') continue;
+        playInlineVideoOn(entry.target, entry.target.dataset.videoUrl || defaultVideoUrl, { muted: true });
+        videoAutoplayObserver.unobserve(entry.target);
+      }
+    }, { threshold: 0.55 });
+
+    videoCovers.forEach((cover) => videoAutoplayObserver.observe(cover));
   </script>
 </body>
 </html>
